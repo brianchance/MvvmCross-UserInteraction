@@ -8,7 +8,7 @@ MvvmCross plugin for interacting with the user from a view model.
 3. Input - asks user for input with ok/cancel, async or callback with button clicked and data or just data when ok clicked
 
 ##Usage
-####Alert
+####Alert Async
 ```
 public ICommand SubmitCommand
 {
@@ -25,7 +25,9 @@ public ICommand SubmitCommand
 					                      });
 		}
 }
-
+```
+####Alert callback
+```
 public ICommand SubmitCommand
 {
 		get
@@ -43,7 +45,7 @@ public ICommand SubmitCommand
 }
 ```
 
-####Confirm/Input
+####Confirm/Input Async
 ```
 public ICommand SubmitCommand
 {
@@ -58,7 +60,9 @@ public ICommand SubmitCommand
 					                       });
 		}
 }
-
+```
+####Confirm/Input callback
+```
 public ICommand SubmitCommand
 {
 		get
