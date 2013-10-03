@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 
 namespace Chance.MvvmCross.Plugins.UserInteraction
 {
@@ -11,6 +12,10 @@ namespace Chance.MvvmCross.Plugins.UserInteraction
 
 		void Input(string message, Action<string> okClicked, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel");
 		void Input(string message, Action<bool, string> answer, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel");
+
+		Task AlertAsync(string message, string title = "");
+		Task<bool> ConfirmAsync(string message, string title = "", string okButton = "OK", string cancelButton = "Cancel");
+		Task<InputResponse> InputAsync(string message, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel");
 	}
 }
 

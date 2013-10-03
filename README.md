@@ -3,13 +3,29 @@ MvvmCross-UserInteraction Plugin
 
 MvvmCross plugin for interacting with the user from a view model. 
 ##Features
-1. Alert - simple alert to the user, optional callback when done
-2. Confirm - dialog with ok/cancel, callback with button clicked or just when ok clicked
-3. Input - asks user for input with ok/cancel, callback with button clicked and data or just data when ok clicked
+1. Alert - simple alert to the user, async or optional callback when done
+2. Confirm - dialog with ok/cancel, async or callback with button clicked or just when ok clicked
+3. Input - asks user for input with ok/cancel, async or callback with button clicked and data or just data when ok clicked
 
 ##Usage
 ####Alert
 ```
+public ICommand SubmitCommand
+{
+		get
+		{
+			return new MvxCommand(async () =>
+					                      {
+					                        if (string.IsNullOrEmpty(FirstName)) 
+					                        {
+					                          await Mvx.Resolve<IUserInteraction>().AlertAsync("First Name is Required");
+					                          return;
+					                        }
+					                        //do work
+					                      });
+		}
+}
+
 public ICommand SubmitCommand
 {
 		get
@@ -29,6 +45,20 @@ public ICommand SubmitCommand
 
 ####Confirm/Input
 ```
+public ICommand SubmitCommand
+{
+		get
+		{
+			return new MvxCommand(async () =>
+					                      {
+					                        if (await Mvx.Resolve<IUserInteraction>().ConfirmAsync("Are you sure?"))
+					                        {
+					                        	//do work
+					                        }
+					                       });
+		}
+}
+
 public ICommand SubmitCommand
 {
 		get
