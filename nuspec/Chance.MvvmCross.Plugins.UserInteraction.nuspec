@@ -17,7 +17,7 @@
 	</metadata>
 	<files>		
 		<!-- PCL -->
-		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Chance.MvvmCross.Plugins.UserInteraction.dll" />
+		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl50+wp8\Chance.MvvmCross.Plugins.UserInteraction.dll" />
 
 		<!-- phone - not supported
 		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\sl4-wp71\Chance.MvvmCross.Plugins.UserInteraction.dll" />
