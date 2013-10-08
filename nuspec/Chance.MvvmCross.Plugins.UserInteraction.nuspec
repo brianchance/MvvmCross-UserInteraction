@@ -3,7 +3,7 @@
 	<metadata>
 		<id>Chance.MvvmCross.Plugins.UserInteraction</id>
 		<version>1.0.0</version>
-		<title>Brian Chance's Awesome MvvmCross UserInteraction Plugin</title>
+		<title>MvvmCross UserInteraction Plugin</title>
 		<authors>Brian Chance</authors>
 		<owners>Brian Chance</owners>
 		<licenseUrl>https://github.com/brianchance/MvvmCross-UserInteraction/blob/master/LICENSE</licenseUrl>
