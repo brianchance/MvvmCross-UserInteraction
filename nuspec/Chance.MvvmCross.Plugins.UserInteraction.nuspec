@@ -12,7 +12,7 @@
 		<description>This package contains a 'UserInteraction' plugin for MvvmCross v3</description>
 		<tags>mvvm mvvmcross xamarin monodroid monotouch wpf wp wpdev windowsphone</tags>
 		<dependencies>
-		  <dependency id="MvvmCross.HotTuna.CrossCore" version="3.0.12" />
+		  <dependency id="MvvmCross.HotTuna.CrossCore" version="3.0.14" />
 		</dependencies>
 	</metadata>
 	<files>		
