@@ -39,11 +39,11 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 			return tcs.Task;
 		}
 
-		public void Alert(string message, Action done = null, string title = "")
+		public void Alert(string message, Action done = null, string title = "", string okButton = "OK")
 		{
 			UIApplication.SharedApplication.InvokeOnMainThread(() =>
 			{
-				var alert = new UIAlertView(title ?? string.Empty, message, null, "OK");
+				var alert = new UIAlertView(title ?? string.Empty, message, null, okButton);
 				if (done != null)
 				{
 					alert.Clicked += (sender, args) => done();
