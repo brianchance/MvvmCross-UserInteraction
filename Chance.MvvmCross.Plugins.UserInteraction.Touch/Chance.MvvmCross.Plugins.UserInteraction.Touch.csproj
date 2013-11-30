@@ -41,9 +41,6 @@
     <Reference Include="Cirrious.CrossCore">
       <HintPath>..\lib\Touch\Cirrious.CrossCore.dll</HintPath>
     </Reference>
-    <Reference Include="Chance.MvvmCross.Plugins.UserInteraction">
-      <HintPath>..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -52,5 +49,11 @@
   <ItemGroup>
     <Compile Include="UserInteraction.cs" />
     <Compile Include="Plugin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chance.MvvmCross.Plugins.UserInteraction\Chance.MvvmCross.Plugins.UserInteraction.csproj">
+      <Project>{C912911A-2216-447C-ADF4-8DC190804D75}</Project>
+      <Name>Chance.MvvmCross.Plugins.UserInteraction</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
