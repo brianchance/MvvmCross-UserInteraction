@@ -49,14 +49,14 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			return tcs.Task;
 		}
 
-		public void Alert(string message, Action done = null, string title = "")
+		public void Alert(string message, Action done = null, string title = "", string okButton = "OK")
 		{
 			Application.SynchronizationContext.Post(ignored => {
 				if (CurrentActivity == null) return;
 				new AlertDialog.Builder(CurrentActivity)
 					.SetMessage(message)
 						.SetTitle(title)
-						.SetPositiveButton("OK", delegate {
+						.SetPositiveButton(okButton, delegate {
 							if (done != null)
 								done();
 						})
