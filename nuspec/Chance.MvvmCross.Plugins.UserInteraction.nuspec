@@ -1,7 +1,7 @@
 ﻿<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>Chance.MvvmCross.Plugins.UserInteraction</id>
-		<version>1.0.1</version>
+		<version>1.0.2</version>
 		<title>MvvmCross UserInteraction Plugin</title>
 		<authors>Brian Chance</authors>
 		<owners>Brian Chance</owners>
@@ -16,7 +16,7 @@
 	</metadata>
 	<files>		
 		<!-- PCL -->
-		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl50+wp8\Chance.MvvmCross.Plugins.UserInteraction.dll" />
+		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+sl50+wp8\Chance.MvvmCross.Plugins.UserInteraction.dll" />
 
 		<!-- phone - not supported
 		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\sl4-wp71\Chance.MvvmCross.Plugins.UserInteraction.dll" />
@@ -25,14 +25,14 @@
 	    -->
 		
 		<!-- droid -->
-		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\MonoAndroid16\Chance.MvvmCross.Plugins.UserInteraction.dll" />
-		<file src="..\bin\Release\Droid\Chance.MvvmCross.Plugins.UserInteraction.Droid.dll" target="lib\MonoAndroid16\Chance.MvvmCross.Plugins.UserInteraction.Droid.dll" />
-        <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\MonoAndroid16\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
+		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\MonoAndroid\Chance.MvvmCross.Plugins.UserInteraction.dll" />
+		<file src="..\bin\Release\Droid\Chance.MvvmCross.Plugins.UserInteraction.Droid.dll" target="lib\MonoAndroid\Chance.MvvmCross.Plugins.UserInteraction.Droid.dll" />
+        <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
 		
 		<!-- touch -->
-		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\MonoTouch40\Chance.MvvmCross.Plugins.UserInteraction.dll" />
-		<file src="..\bin\Release\Touch\Chance.MvvmCross.Plugins.UserInteraction.Touch.dll" target="lib\MonoTouch40\Chance.MvvmCross.Plugins.UserInteraction.Touch.dll" />
-        <file src="TouchBootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\MonoTouch40\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
+		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\MonoTouch\Chance.MvvmCross.Plugins.UserInteraction.dll" />
+		<file src="..\bin\Release\Touch\Chance.MvvmCross.Plugins.UserInteraction.Touch.dll" target="lib\MonoTouch\Chance.MvvmCross.Plugins.UserInteraction.Touch.dll" />
+        <file src="TouchBootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
 		
 	</files>
 </package>
