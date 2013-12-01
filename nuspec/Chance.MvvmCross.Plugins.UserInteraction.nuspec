@@ -1,7 +1,7 @@
 ﻿<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>Chance.MvvmCross.Plugins.UserInteraction</id>
-		<version>1.0.2</version>
+		<version>1.0.3</version>
 		<title>MvvmCross UserInteraction Plugin</title>
 		<authors>Brian Chance</authors>
 		<owners>Brian Chance</owners>

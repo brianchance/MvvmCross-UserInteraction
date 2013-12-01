@@ -64,10 +64,10 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			}, null);
 		}
 
-		public Task AlertAsync(string message, string title = "")
+		public Task AlertAsync(string message, string title = "", string okButton = "OK")
 		{
 			var tcs = new TaskCompletionSource<object>();
-			Alert(message, () => tcs.SetResult(null), title);
+			Alert(message, () => tcs.SetResult(null), title, okButton);
 			return tcs.Task;
 		}
 
