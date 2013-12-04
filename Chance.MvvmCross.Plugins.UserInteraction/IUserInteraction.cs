@@ -23,12 +23,5 @@ namespace Chance.MvvmCross.Plugins.UserInteraction
 	    Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No",
 	        string neutral = "Maybe");
 	}
-
-    public enum ConfirmThreeButtonsResponse
-    {
-        Positive,
-        Negative,
-        Neutral
-    }
 }
 
