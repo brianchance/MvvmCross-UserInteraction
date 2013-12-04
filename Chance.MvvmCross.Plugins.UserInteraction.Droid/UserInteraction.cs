@@ -50,7 +50,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			return tcs.Task;
 		}
 
-	    public void ConfirmThreeButtons(string message, Action<ConfirmResponse> answer, string title = null, string positive = "Yes", string negative = "No",
+	    public void ConfirmThreeButtons(string message, Action<ConfirmThreeButtonsResponse> answer, string title = null, string positive = "Yes", string negative = "No",
 	        string neutral = "Maybe")
 	    {
 	        Application.SynchronizationContext.Post(ignored =>
@@ -61,24 +61,24 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
                         .SetTitle(title)
                         .SetPositiveButton(positive, delegate {
                             if (answer != null)
-                                answer(ConfirmResponse.Positive);
+                                answer(ConfirmThreeButtonsResponse.Positive);
                         })
                         .SetNegativeButton(negative, delegate {
                             if (answer != null)
-                                answer(ConfirmResponse.Negative);
+                                answer(ConfirmThreeButtonsResponse.Negative);
                         })
                         .SetNeutralButton(neutral, delegate {
                             if (answer != null)
-                                answer(ConfirmResponse.Neutral);
+                                answer(ConfirmThreeButtonsResponse.Neutral);
                         })
                         .Show();
             }, null);
 	    }
 
-        public Task<ConfirmResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No",
+        public Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No",
             string neutral = "Maybe")
 	    {
-	        var tcs = new TaskCompletionSource<ConfirmResponse>();
+	        var tcs = new TaskCompletionSource<ConfirmThreeButtonsResponse>();
 	        ConfirmThreeButtons(message, tcs.SetResult, title, positive, negative, neutral);
 	        return tcs.Task;
 	    }

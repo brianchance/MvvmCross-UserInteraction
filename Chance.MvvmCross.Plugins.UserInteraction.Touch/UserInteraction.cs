@@ -39,7 +39,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 			return tcs.Task;
         }
 
-        public void ConfirmThreeButtons(string message, Action<ConfirmResponse> answer, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
+        public void ConfirmThreeButtons(string message, Action<ConfirmThreeButtonsResponse> answer, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
         {
             var confirm = new UIAlertView(title ?? string.Empty, message, null, negative, positive, neutral);
             if (answer != null)
@@ -49,20 +49,20 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
                     {
                         var buttonIndex = args.ButtonIndex;
                         if (buttonIndex == confirm.CancelButtonIndex)
-                            answer(ConfirmResponse.Negative);
+                            answer(ConfirmThreeButtonsResponse.Negative);
                         else if (buttonIndex == confirm.FirstOtherButtonIndex)
-                            answer(ConfirmResponse.Positive);
+                            answer(ConfirmThreeButtonsResponse.Positive);
                         else
-                            answer(ConfirmResponse.Neutral);
+                            answer(ConfirmThreeButtonsResponse.Neutral);
                     };
                 confirm.Show();
             }
         }
 
-        public Task<ConfirmResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
+        public Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
         {
 
-            var tcs = new TaskCompletionSource<ConfirmResponse>();
+            var tcs = new TaskCompletionSource<ConfirmThreeButtonsResponse>();
             ConfirmThreeButtons(message, tcs.SetResult, title, positive, negative, neutral);
             return tcs.Task;
         }
