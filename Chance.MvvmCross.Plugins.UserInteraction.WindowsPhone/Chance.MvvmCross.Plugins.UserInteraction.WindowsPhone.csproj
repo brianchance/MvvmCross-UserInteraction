@@ -121,11 +121,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="README_FIRST.txt" />
-    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
-    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
-    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
-    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
-    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
