@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+  <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:textSize="40dp"
+    android:text="Confirm"
+    local:MvxBind="Click ConfirmCommand"
+    />
+  <Button
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:textSize="40dp"
+  android:text="Alert"
+  local:MvxBind="Click AlertCommand"
+    />
+  <Button
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:textSize="40dp"
+  android:text="Input"
+  local:MvxBind="Click InputCommand"
+    />
+  <Button
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:textSize="40dp"
+  android:text="Confirm Three Buttons"
+  local:MvxBind="Click ConfirmThreeButtonsCommand"
+    />
+</LinearLayout>
