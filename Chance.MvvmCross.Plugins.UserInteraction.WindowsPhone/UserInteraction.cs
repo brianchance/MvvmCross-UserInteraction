@@ -120,23 +120,52 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone
         }
 
 
-
         public void ConfirmThreeButtons(string message, Action<ConfirmThreeButtonsResponse> answer, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
         {
-            throw new NotImplementedException();
 
-            var result =ConfirmThreeButtonsAsync(message, title, positive, negative, neutral);
-            result.ContinueWith((value)=> answer(value.Result));
+            var result = ConfirmThreeButtonsAsync(message, title, positive, negative, neutral);
+            result.ContinueWith((value) => answer(value.Result));
         }
 
-        public async Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
+        public Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
         {
-            throw new NotImplementedException();
+            StackPanel contents = new StackPanel();
+            contents.Orientation = Orientation.Vertical;
+            var positiveButton = new Button() { Content = positive };
+            var neutralButton = new Button() { Content = neutral };
+            var negativeButton = new Button() { Content = negative };
+            contents.Children.Add(positiveButton);
+            contents.Children.Add(neutralButton);
+            contents.Children.Add(negativeButton);
 
-            //This crashes as CustomMessageBox won't accept more than 2 buttons :-(
-            //This was uising the coding 4 fun toolkit
-            //int result = await CustomMessageBox.ShowAsync(title, message, 0, CustomMessageBoxIcon.None, positive, neutral,negative);
-            //return (ConfirmThreeButtonsResponse) result;
+            var box = new Microsoft.Phone.Controls.CustomMessageBox()
+            {
+                Caption = title,
+                Message = message,
+                IsLeftButtonEnabled = false,
+                IsRightButtonEnabled = false,
+                Content = contents
+            };
+
+            var response = new TaskCompletionSource<ConfirmThreeButtonsResponse>();
+            positiveButton.Click += (sender, args) =>
+            {
+                response.TrySetResult(ConfirmThreeButtonsResponse.Positive);
+                box.Dismiss();
+            };
+            neutralButton.Click += (sender, args) =>
+            {
+                response.TrySetResult(ConfirmThreeButtonsResponse.Neutral);
+                box.Dismiss();
+            };
+            negativeButton.Click += (sender, args) =>
+            {
+                response.TrySetResult(ConfirmThreeButtonsResponse.Negative);
+                box.Dismiss();
+            };
+            box.Show();
+            return response.Task;
+
 
         }
     }
