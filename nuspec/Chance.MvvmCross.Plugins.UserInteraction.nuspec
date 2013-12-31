@@ -11,18 +11,23 @@
 		<description>This package contains a 'UserInteraction' plugin for MvvmCross v3</description>
 		<tags>mvvm mvvmcross xamarin monodroid monotouch wpf wp wpdev windowsphone</tags>
 		<dependencies>
-		  <dependency id="MvvmCross.HotTuna.CrossCore" version="3.0.14" />
+			<group>
+				<dependency id="MvvmCross.HotTuna.CrossCore" version="3.0.14" />
+			</group>
+		     <group targetFramework="wp8">
+				<dependency id="WPtoolkit" />
+			</group>
 		</dependencies>
 	</metadata>
 	<files>		
 		<!-- PCL -->
 		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+sl50+wp8\Chance.MvvmCross.Plugins.UserInteraction.dll" />
 
-		<!-- phone - not supported
-		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\sl4-wp71\Chance.MvvmCross.Plugins.UserInteraction.dll" />
-		<file src="..\bin\Release\WindowsPhone\Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone.dll" target="lib\sl4-wp71\Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone.dll" />
-        <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\sl4-wp71\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
-	    -->
+		<!-- phone  -->
+		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\wp8\Chance.MvvmCross.Plugins.UserInteraction.dll" />
+		<file src="..\bin\Release\WindowsPhone\Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone.dll" target="lib\wp8\Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone.dll" />
+        <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
+	   
 		
 		<!-- droid -->
 		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\MonoAndroid\Chance.MvvmCross.Plugins.UserInteraction.dll" />
