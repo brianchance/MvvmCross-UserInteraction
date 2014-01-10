@@ -58,21 +58,18 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
                 this.OnShowDialog(new AlertDialog.Builder(CurrentActivity)
                     .SetMessage(message)
                         .SetTitle(title)
-                        .SetPositiveButton(positive, delegate
-                {
-                    if (answer != null)
-                        answer(ConfirmThreeButtonsResponse.Positive);
-                })
-                        .SetNegativeButton(negative, delegate
-                {
-                    if (answer != null)
-                        answer(ConfirmThreeButtonsResponse.Negative);
-                })
-                        .SetNeutralButton(neutral, delegate
-                {
-                    if (answer != null)
-                        answer(ConfirmThreeButtonsResponse.Neutral);
-                }));
+                        .SetPositiveButton(positive, delegate {
+                            if (answer != null)
+                                answer(ConfirmThreeButtonsResponse.Positive);
+                        })
+                        .SetNegativeButton(negative, delegate {
+                            if (answer != null)
+                                answer(ConfirmThreeButtonsResponse.Negative);
+                        })
+                        .SetNeutralButton(neutral, delegate {
+                            if (answer != null)
+                                answer(ConfirmThreeButtonsResponse.Neutral);
+                        }));
             }, null);
 	    }
 
