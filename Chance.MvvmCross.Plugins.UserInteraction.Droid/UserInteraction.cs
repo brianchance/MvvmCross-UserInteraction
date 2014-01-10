@@ -28,7 +28,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			//Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction();
 			Application.SynchronizationContext.Post(ignored => {
 				if (CurrentActivity == null) return;
-				this.OnShowDialog(new AlertDialog.Builder(CurrentActivity)
+				this.CustomizeAndShow(new AlertDialog.Builder(CurrentActivity)
 					.SetMessage(message)
 						.SetTitle(title)
 						.SetPositiveButton(okButton, delegate {
@@ -49,43 +49,43 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			return tcs.Task;
 		}
 
-	    public void ConfirmThreeButtons(string message, Action<ConfirmThreeButtonsResponse> answer, string title = null, string positive = "Yes", string negative = "No",
-	        string neutral = "Maybe")
-	    {
-	        Application.SynchronizationContext.Post(ignored =>
-            {
-                if (CurrentActivity == null) return;
-                this.OnShowDialog(new AlertDialog.Builder(CurrentActivity)
-                    .SetMessage(message)
-                        .SetTitle(title)
-                        .SetPositiveButton(positive, delegate {
-                            if (answer != null)
-                                answer(ConfirmThreeButtonsResponse.Positive);
-                        })
-                        .SetNegativeButton(negative, delegate {
-                            if (answer != null)
-                                answer(ConfirmThreeButtonsResponse.Negative);
-                        })
-                        .SetNeutralButton(neutral, delegate {
-                            if (answer != null)
-                                answer(ConfirmThreeButtonsResponse.Neutral);
-                        }));
-            }, null);
-	    }
+		public void ConfirmThreeButtons(string message, Action<ConfirmThreeButtonsResponse> answer, string title = null, string positive = "Yes", string negative = "No",
+			string neutral = "Maybe")
+		{
+			Application.SynchronizationContext.Post(ignored =>
+			{
+				if (CurrentActivity == null) return;
+				this.CustomizeAndShow(new AlertDialog.Builder(CurrentActivity)
+					.SetMessage(message)
+						.SetTitle(title)
+						.SetPositiveButton(positive, delegate {
+							if (answer != null)
+								answer(ConfirmThreeButtonsResponse.Positive);
+						})
+						.SetNegativeButton(negative, delegate {
+							if (answer != null)
+								answer(ConfirmThreeButtonsResponse.Negative);
+						})
+						.SetNeutralButton(neutral, delegate {
+							if (answer != null)
+								answer(ConfirmThreeButtonsResponse.Neutral);
+						}));
+			}, null);
+		}
 
-        public Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No",
-            string neutral = "Maybe")
-	    {
-	        var tcs = new TaskCompletionSource<ConfirmThreeButtonsResponse>();
-	        ConfirmThreeButtons(message, tcs.SetResult, title, positive, negative, neutral);
-	        return tcs.Task;
-	    }
+		public Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No",
+			string neutral = "Maybe")
+		{
+			var tcs = new TaskCompletionSource<ConfirmThreeButtonsResponse>();
+			ConfirmThreeButtons(message, tcs.SetResult, title, positive, negative, neutral);
+			return tcs.Task;
+		}
 
 		public void Alert(string message, Action done = null, string title = "", string okButton = "OK")
 		{
 			Application.SynchronizationContext.Post(ignored => {
 				if (CurrentActivity == null) return;
-				this.OnShowDialog(new AlertDialog.Builder(CurrentActivity)
+				this.CustomizeAndShow(new AlertDialog.Builder(CurrentActivity)
 					.SetMessage(message)
 						.SetTitle(title)
 						.SetPositiveButton(okButton, delegate {
@@ -116,8 +116,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			Application.SynchronizationContext.Post(ignored => {
 				if (CurrentActivity == null) return;
 				var input = new EditText(CurrentActivity) { Hint = hint };
-
-				this.OnShowDialog(new AlertDialog.Builder(CurrentActivity)
+				this.CustomizeAndShow(new AlertDialog.Builder(CurrentActivity)
 					.SetMessage(message)
 						.SetTitle(title)
 						.SetView(input)
@@ -139,10 +138,14 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			return tcs.Task;
 		}
 
-        protected virtual void OnShowDialog(AlertDialog.Builder dialogBuilder)
-        {
-            dialogBuilder.Show();
-        }
+		private void CustomizeAndShow(AlertDialog.Builder dialogBuilder)
+		{
+			IAlertDialogBuilderCustomizer customizer;
+			if (Mvx.TryResolve(out customizer))
+				customizer.Customize(dialogBuilder);
+
+			dialogBuilder.Show();
+		}
 	}
 }
 
