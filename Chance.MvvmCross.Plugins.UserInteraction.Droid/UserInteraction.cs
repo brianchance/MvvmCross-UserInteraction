@@ -28,7 +28,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			//Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction();
 			Application.SynchronizationContext.Post(ignored => {
 				if (CurrentActivity == null) return;
-				new AlertDialog.Builder(CurrentActivity)
+				this.OnShowDialog(new AlertDialog.Builder(CurrentActivity)
 					.SetMessage(message)
 						.SetTitle(title)
 						.SetPositiveButton(okButton, delegate {
@@ -38,8 +38,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 						.SetNegativeButton(cancelButton, delegate {	
 							if (answer != null)
 								answer(false);
-						})
-						.Show();
+						}));
 			}, null);
 		}
 
@@ -56,22 +55,24 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 	        Application.SynchronizationContext.Post(ignored =>
             {
                 if (CurrentActivity == null) return;
-                new AlertDialog.Builder(CurrentActivity)
+                this.OnShowDialog(new AlertDialog.Builder(CurrentActivity)
                     .SetMessage(message)
                         .SetTitle(title)
-                        .SetPositiveButton(positive, delegate {
-                            if (answer != null)
-                                answer(ConfirmThreeButtonsResponse.Positive);
-                        })
-                        .SetNegativeButton(negative, delegate {
-                            if (answer != null)
-                                answer(ConfirmThreeButtonsResponse.Negative);
-                        })
-                        .SetNeutralButton(neutral, delegate {
-                            if (answer != null)
-                                answer(ConfirmThreeButtonsResponse.Neutral);
-                        })
-                        .Show();
+                        .SetPositiveButton(positive, delegate
+                {
+                    if (answer != null)
+                        answer(ConfirmThreeButtonsResponse.Positive);
+                })
+                        .SetNegativeButton(negative, delegate
+                {
+                    if (answer != null)
+                        answer(ConfirmThreeButtonsResponse.Negative);
+                })
+                        .SetNeutralButton(neutral, delegate
+                {
+                    if (answer != null)
+                        answer(ConfirmThreeButtonsResponse.Neutral);
+                }));
             }, null);
 	    }
 
@@ -87,14 +88,13 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 		{
 			Application.SynchronizationContext.Post(ignored => {
 				if (CurrentActivity == null) return;
-				new AlertDialog.Builder(CurrentActivity)
+				this.OnShowDialog(new AlertDialog.Builder(CurrentActivity)
 					.SetMessage(message)
 						.SetTitle(title)
 						.SetPositiveButton(okButton, delegate {
 							if (done != null)
 								done();
-						})
-						.Show();
+						}));
 			}, null);
 		}
 
@@ -120,7 +120,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 				if (CurrentActivity == null) return;
 				var input = new EditText(CurrentActivity) { Hint = hint };
 
-				new AlertDialog.Builder(CurrentActivity)
+				this.OnShowDialog(new AlertDialog.Builder(CurrentActivity)
 					.SetMessage(message)
 						.SetTitle(title)
 						.SetView(input)
@@ -131,8 +131,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 						.SetNegativeButton(cancelButton, delegate {	
 							if (answer != null)
 								answer(false, input.Text);
-						})
-						.Show();
+						}));
 			}, null);
 		}
 
@@ -142,6 +141,11 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			Input(message, (ok, text) => tcs.SetResult(new InputResponse {Ok = ok, Text = text}),	placeholder, title, okButton, cancelButton);
 			return tcs.Task;
 		}
+
+        protected virtual void OnShowDialog(AlertDialog.Builder dialogBuilder)
+        {
+            dialogBuilder.Show();
+        }
 	}
 }
 
