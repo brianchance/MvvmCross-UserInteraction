@@ -22,6 +22,14 @@ namespace Chance.MvvmCross.Plugins.UserInteraction
 
 	    Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No",
 	        string neutral = "Maybe");
+
+        void ChooseSingle(string message, string[] options, int? chosenItem = null, Action<int?> answer = null, string title = null, string okButton = "OK", string cancelButton = "Cancel");
+
+        Task<int?> ChooseSingleAsync(string message, string[] options, int? chosenItem = null, string title = null, string okButton = "OK", string cancelButton = "Cancel");
+
+        void ChooseMultiple(string message, string[] options, int[] selectedOptions, Action<int[]> answer = null, string title = null, string okButton = "OK", string cancelButton = "Cancel");
+
+        Task<int[]> ChooseMultipleAsync(string message, string[] options, int[] selectedOptions, string title = null, string okButton = "OK", string cancelButton = "Cancel");
 	}
 }
 

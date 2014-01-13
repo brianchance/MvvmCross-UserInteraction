@@ -123,6 +123,26 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 			Input(message, (ok, text) => tcs.SetResult(new InputResponse {Ok = ok, Text = text}),	placeholder, title, okButton, cancelButton);
 			return tcs.Task;
 		}
+
+        public void ChooseSingle(string message, string[] options, int? chosenItem = null, Action<int?> answer = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int?> ChooseSingleAsync(string message, string[] options, int? chosenItem = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ChooseMultiple(string message, string[] options, int[] selectedOptions, Action<int[]> answer = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int[]> ChooseMultipleAsync(string message, string[] options, int[] selectedOptions, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+        {
+            throw new NotImplementedException();
+        }
 	}
 }
 

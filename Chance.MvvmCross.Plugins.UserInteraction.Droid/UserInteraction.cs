@@ -1,6 +1,10 @@
 using System;
+using System.Linq;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
+using Android.Util;
+using Android.Views;
 using Cirrious.CrossCore;
 using Android.Widget;
 using Cirrious.CrossCore.Droid.Platform;
@@ -137,6 +141,173 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			Input(message, (ok, text) => tcs.SetResult(new InputResponse {Ok = ok, Text = text}),	placeholder, title, okButton, cancelButton);
 			return tcs.Task;
 		}
+
+        public void ChooseSingle(string message, string[] options, int? chosenItem, Action<int?> answer, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+        {
+            Application.SynchronizationContext.Post(ignored =>
+            {
+                if (this.CurrentActivity == null)
+                    return;
+
+                var radioButtons = options
+                    .Select((option, i) =>
+                    {
+                        var checkBox = new RadioButton(this.CurrentActivity)
+                        {
+                            LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent)
+                            {
+                                Gravity = GravityFlags.CenterVertical
+                            },
+
+                            Id = (i + 1),
+                            Text = option,
+                            Gravity = GravityFlags.Center,
+                        };
+
+                        checkBox.SetTextColor(Color.White);
+
+                        return checkBox;
+                    })
+                    .ToArray();
+
+                var radioGroup = new RadioGroup(this.CurrentActivity)
+                {
+                    LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FillParent, ViewGroup.LayoutParams.WrapContent),
+                    Orientation = Orientation.Vertical
+                };
+
+                foreach (var optionLayout in radioButtons)
+                {
+                    radioGroup.AddView(optionLayout);
+                }
+
+                var scrollView = new ScrollView(this.CurrentActivity)
+                {
+                    LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FillParent, ViewGroup.LayoutParams.WrapContent),
+                };
+
+                scrollView.AddView(radioGroup);
+
+                this.CustomizeAndShow(new AlertDialog.Builder(this.CurrentActivity)
+                    .SetMessage(message)
+                    .SetTitle(title)
+                    .SetView(scrollView)
+                    .SetPositiveButton(okButton, delegate
+                    {
+                        if (answer != null)
+                            answer((radioGroup.CheckedRadioButtonId > 0) ? (radioGroup.CheckedRadioButtonId - 1) : ((int?)null));
+                    })
+                    .SetNegativeButton(cancelButton, delegate
+                    {
+                        if (answer != null)
+                            answer(null);
+                    }));
+            }, null);
+        }
+
+        public Task<int?> ChooseSingleAsync(string message, string[] options, int? chosenItem, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+        {
+            var tcs = new TaskCompletionSource<int?>();
+            this.ChooseSingle(message, options, chosenItem, tcs.SetResult, title, okButton, cancelButton);
+
+            return tcs.Task;
+        }
+
+        public void ChooseMultiple(string message, string[] options, int[] selectedOptions, Action<int[]> answer, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+        {
+            Application.SynchronizationContext.Post(ignored =>
+            {
+                if (this.CurrentActivity == null)
+                    return;
+
+                CheckBox[] checkBoxes = null;
+
+                checkBoxes = options
+                    .Select(x =>
+                    {
+                        var checkBox = new CheckBox(this.CurrentActivity)
+                        {
+                            LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent)
+                            {
+                                Gravity = GravityFlags.CenterVertical
+                            },
+
+                            Gravity = GravityFlags.Center,
+                        };
+
+                        checkBox.SetTextColor(Color.White);
+
+                        return checkBox;
+                    })
+                    .ToArray();
+
+                var optionLayouts = options
+                    .Select((option, i) =>
+                    {
+                        var optionLayout = new LinearLayout(this.CurrentActivity)
+                        {
+                            LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FillParent, ViewGroup.LayoutParams.WrapContent),
+                            Orientation = Orientation.Horizontal
+                        };
+
+                        optionLayout.AddView(checkBoxes[i]);
+                        optionLayout.AddView(new TextView(this.CurrentActivity)
+                        {
+                            LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FillParent, ViewGroup.LayoutParams.WrapContent)
+                            {
+                                Gravity = GravityFlags.CenterVertical,
+                                LeftMargin = (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, 8, CurrentActivity.Resources.DisplayMetrics)
+                            },
+
+                            Text = option
+                        });
+
+                        return optionLayout;
+                    })
+                    .ToArray();
+
+                var linearLayout = new LinearLayout(this.CurrentActivity)
+                {
+                    LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FillParent, ViewGroup.LayoutParams.WrapContent),
+                    Orientation = Orientation.Vertical
+                };
+
+                foreach (var optionLayout in optionLayouts)
+                {
+                    linearLayout.AddView(optionLayout);
+                }
+
+                var scrollView = new ScrollView(this.CurrentActivity)
+                {
+                    LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FillParent, ViewGroup.LayoutParams.WrapContent),
+                };
+
+                scrollView.AddView(linearLayout);
+
+                this.CustomizeAndShow(new AlertDialog.Builder(this.CurrentActivity)
+                    .SetMessage(message)
+                    .SetTitle(title)
+                    .SetView(scrollView)
+                    .SetPositiveButton(okButton, delegate
+                    {
+                        if (answer != null)
+                            answer(options.Select((x, i) => ((checkBoxes[i].Checked) ? (i) : (-1))).Where(x => x != -1).ToArray());
+                    })
+                    .SetNegativeButton(cancelButton, delegate
+                    {
+                        if (answer != null)
+                            answer(new int[0]);
+                    }));
+            }, null);
+        }
+
+        public Task<int[]> ChooseMultipleAsync(string message, string[] options, int[] selectedOptions, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+        {
+            var tcs = new TaskCompletionSource<int[]>();
+            this.ChooseMultiple(message, options, selectedOptions, tcs.SetResult, title, okButton, cancelButton);
+
+            return tcs.Task;
+        }
 
 		private void CustomizeAndShow(AlertDialog.Builder dialogBuilder)
 		{
