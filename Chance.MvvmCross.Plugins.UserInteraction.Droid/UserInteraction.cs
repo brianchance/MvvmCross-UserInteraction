@@ -18,23 +18,23 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			get { return Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity; }
 		}
 
-		public void Confirm(string message, Action okClicked = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+		public void Confirm(string message, Action okClicked = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
 		{
-			var task = this.ConfirmAsync(message, title, okButton, cancelButton);
+			var task = this.ConfirmAsync(message, title, okButton, cancelButton, duration);
 
 			if (okClicked != null)
 				task.ContinueWith((completedTask) => Application.SynchronizationContext.Post(ignored => okClicked(), null));
 		}
 
-		public void Confirm(string message, Action<bool> answer = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+		public void Confirm(string message, Action<bool> answer = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
 		{
-			var task = this.ConfirmAsync(message, title, okButton, cancelButton);
+			var task = this.ConfirmAsync(message, title, okButton, cancelButton, duration);
 
 			if (answer != null)
 				task.ContinueWith((completedTask) => Application.SynchronizationContext.Post(ignored => answer(completedTask.Result), null));
 		}
 
-		public Task<bool> ConfirmAsync(string message, string title = "", string okButton = "OK", string cancelButton = "Cancel")
+		public Task<bool> ConfirmAsync(string message, string title = "", string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
 		{
 			var tcs = new TaskCompletionSource<bool>();
 
@@ -56,22 +56,25 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 
 				var dialog = this.CustomizeAndCreate(builder);
 				dialog.Show();
+
+				if (duration.HasValue)
+					Task.Delay(duration.Value).ContinueWith((delayTask) => Application.SynchronizationContext.Post(ignored2 => dialog.SafeDismiss(), null));
 			}, null);
 
 			return tcs.Task;
 		}
 
 		public void ConfirmThreeButtons(string message, Action<ConfirmThreeButtonsResponse> answer = null, string title = null, string positive = "Yes", string negative = "No",
-			string neutral = "Maybe")
+			string neutral = "Maybe", TimeSpan? duration = null)
 		{
-			var task = this.ConfirmThreeButtonsAsync(message, title, positive, negative, neutral);
+			var task = this.ConfirmThreeButtonsAsync(message, title, positive, negative, neutral, duration);
 
 			if (answer != null)
 				task.ContinueWith((completedTask) => Application.SynchronizationContext.Post(ignored => answer(completedTask.Result), null));
 		}
 
 		public Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No",
-			string neutral = "Maybe")
+			string neutral = "Maybe", TimeSpan? duration = null)
 		{
 			var tcs = new TaskCompletionSource<ConfirmThreeButtonsResponse>();
 
@@ -97,20 +100,23 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 
 				var dialog = this.CustomizeAndCreate(builder);
 				dialog.Show();
+
+				if (duration.HasValue)
+					Task.Delay(duration.Value).ContinueWith((delayTask) => Application.SynchronizationContext.Post(ignored2 => dialog.SafeDismiss(), null));
 			}, null);
 
 			return tcs.Task;
 		}
 
-		public void Alert(string message, Action done = null, string title = "", string okButton = "OK")
+		public void Alert(string message, Action done = null, string title = "", string okButton = "OK", TimeSpan? duration = null)
 		{
-			var task = this.AlertAsync(message, title, okButton);
+			var task = this.AlertAsync(message, title, okButton, duration);
 
 			if (done != null)
 				task.ContinueWith((completedTask) => Application.SynchronizationContext.Post(ignored => done(), null));
 		}
 
-		public Task AlertAsync(string message, string title = "", string okButton = "OK")
+		public Task AlertAsync(string message, string title = "", string okButton = "OK", TimeSpan? duration = null)
 		{
 			var tcs = new TaskCompletionSource<object>();
 
@@ -127,28 +133,31 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 
 				var dialog = this.CustomizeAndCreate(builder);
 				dialog.Show();
+
+				if (duration.HasValue)
+					Task.Delay(duration.Value).ContinueWith((delayTask) => Application.SynchronizationContext.Post(ignored2 => dialog.SafeDismiss(), null));
 			}, null);
 
 			return tcs.Task;
 		}
 
-		public void Input(string message, Action<string> okClicked = null, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+		public void Input(string message, Action<string> okClicked = null, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
 		{
-			var task = this.InputAsync(message, placeholder, title, okButton, cancelButton);
+			var task = this.InputAsync(message, placeholder, title, okButton, cancelButton, duration);
 
 			if (okClicked != null)
 				task.ContinueWith((completedTask) => Application.SynchronizationContext.Post(ignored => okClicked(completedTask.Result.Text), null));
 		}
 
-		public void Input(string message, Action<bool, string> answer = null, string hint = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+		public void Input(string message, Action<bool, string> answer = null, string hint = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
 		{
-			var task = this.InputAsync(message, hint, title, okButton, cancelButton);
+			var task = this.InputAsync(message, hint, title, okButton, cancelButton, duration);
 
 			if (answer != null)
 				task.ContinueWith((completedTask) => Application.SynchronizationContext.Post(ignored => answer(completedTask.Result.Ok, completedTask.Result.Text), null));
 		}
 
-		public Task<InputResponse> InputAsync(string message, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+		public Task<InputResponse> InputAsync(string message, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
 		{
 			var tcs = new TaskCompletionSource<InputResponse>();
 
@@ -171,20 +180,23 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 
 				var dialog = this.CustomizeAndCreate(builder);
 				dialog.Show();
+
+				if (duration.HasValue)
+					Task.Delay(duration.Value).ContinueWith((delayTask) => Application.SynchronizationContext.Post(ignored2 => dialog.SafeDismiss(), null));
 			}, null);
 
 			return tcs.Task;
 		}
 
-		public void ChooseSingle(string message, string[] options, int? chosenItem, Action<int?> answer = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+		public void ChooseSingle(string message, string[] options, int? chosenItem, Action<int?> answer = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
 		{
-			var task = this.ChooseSingleAsync(message, options, chosenItem, title, okButton, cancelButton);
+			var task = this.ChooseSingleAsync(message, options, chosenItem, title, okButton, cancelButton, duration);
 
 			if (answer != null)
 				task.ContinueWith((completedTask) => Application.SynchronizationContext.Post(ignored => answer(completedTask.Result), null));
 		}
 
-		public Task<int?> ChooseSingleAsync(string message, string[] options, int? chosenItem, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+		public Task<int?> ChooseSingleAsync(string message, string[] options, int? chosenItem, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
 		{
 			var tcs = new TaskCompletionSource<int?>();
 
@@ -247,20 +259,23 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 
 				var dialog = this.CustomizeAndCreate(builder);
 				dialog.Show();
+
+				if (duration.HasValue)
+					Task.Delay(duration.Value).ContinueWith((delayTask) => Application.SynchronizationContext.Post(ignored2 => dialog.SafeDismiss(), null));
 			}, null);
 
 			return tcs.Task;
 		}
 
-		public void ChooseMultiple(string message, string[] options, int[] selectedOptions, Action<int[]> answer = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+		public void ChooseMultiple(string message, string[] options, int[] selectedOptions, Action<int[]> answer = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
 		{
-			var task = this.ChooseMultipleAsync(message, options, selectedOptions, title, okButton, cancelButton);
+			var task = this.ChooseMultipleAsync(message, options, selectedOptions, title, okButton, cancelButton, duration);
 			
 			if (answer != null)
 				task.ContinueWith((completedTask) => Application.SynchronizationContext.Post(ignored => answer(completedTask.Result), null));
 		}
 
-		public Task<int[]> ChooseMultipleAsync(string message, string[] options, int[] selectedOptions, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+		public Task<int[]> ChooseMultipleAsync(string message, string[] options, int[] selectedOptions, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
 		{
 			var tcs = new TaskCompletionSource<int[]>();
 
@@ -346,6 +361,9 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 
 				var dialog = this.CustomizeAndCreate(builder);
 				dialog.Show();
+
+				if (duration.HasValue)
+					Task.Delay(duration.Value).ContinueWith((delayTask) => Application.SynchronizationContext.Post(ignored2 => dialog.SafeDismiss(), null));
 			}, null);
 
 			return tcs.Task;
