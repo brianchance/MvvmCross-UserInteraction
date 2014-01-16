@@ -362,7 +362,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 		public async Task<InputResponse<decimal>> InputNumericAsync(string message, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
 		{
 			var response = await this.InputAsync(message, placeholder, title, okButton, cancelButton, duration, true);
-			return response.Ok ? new InputResponse<decimal> { Ok = true, Value = decimal.Parse(response.Value) } : new InputResponse<decimal> { Ok = false, Value = 0 };
+			return (response.Ok && !string.IsNullOrEmpty(response.Value)) ? new InputResponse<decimal> { Ok = true, Value = decimal.Parse(response.Value) } : new InputResponse<decimal> { Ok = false, Value = 0 };
 		}
 
 		private Task<InputResponse<string>> InputAsync(string message, string placeholder, string title, string okButton, string cancelButton, TimeSpan? duration, bool numeric)
