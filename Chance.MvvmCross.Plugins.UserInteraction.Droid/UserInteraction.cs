@@ -141,51 +141,25 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			return tcs.Task;
 		}
 
-		public void Input(string message, Action<string> okClicked = null, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
+		public void InputText(string message, Action<string> okClicked = null, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
 		{
-			var task = this.InputAsync(message, placeholder, title, okButton, cancelButton, duration);
+			var task = this.InputTextAsync(message, placeholder, title, okButton, cancelButton, duration);
 
 			if (okClicked != null)
-				task.ContinueWith((completedTask) => Application.SynchronizationContext.Post(ignored => okClicked(completedTask.Result.Text), null));
+				task.ContinueWith((completedTask) => Application.SynchronizationContext.Post(ignored => okClicked(completedTask.Result.Value), null));
 		}
 
-		public void Input(string message, Action<bool, string> answer = null, string hint = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
+		public void InputText(string message, Action<bool, string> answer = null, string hint = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
 		{
-			var task = this.InputAsync(message, hint, title, okButton, cancelButton, duration);
+			var task = this.InputTextAsync(message, hint, title, okButton, cancelButton, duration);
 
 			if (answer != null)
-				task.ContinueWith((completedTask) => Application.SynchronizationContext.Post(ignored => answer(completedTask.Result.Ok, completedTask.Result.Text), null));
+				task.ContinueWith((completedTask) => Application.SynchronizationContext.Post(ignored => answer(completedTask.Result.Ok, completedTask.Result.Value), null));
 		}
 
-		public Task<InputResponse> InputAsync(string message, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
+		public Task<InputResponse<string>> InputTextAsync(string message, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
 		{
-			var tcs = new TaskCompletionSource<InputResponse>();
-
-			Application.SynchronizationContext.Post(ignored =>
-			{
-				if (CurrentActivity == null) return;
-				var input = new EditText(CurrentActivity) { Hint = placeholder };
-				var builder = new AlertDialog.Builder(CurrentActivity)
-					.SetMessage(message)
-					.SetTitle(title)
-					.SetView(input)
-					.SetPositiveButton(okButton, delegate
-					{
-						tcs.TrySetResult(new InputResponse { Ok = true, Text = input.Text });
-					})
-					.SetNegativeButton(cancelButton, delegate
-					{
-						tcs.TrySetResult(new InputResponse { Ok = false, Text = input.Text });
-					});
-
-				var dialog = this.CustomizeAndCreate(builder);
-				dialog.Show();
-
-				if (duration.HasValue)
-					Task.Delay(duration.Value).ContinueWith((delayTask) => Application.SynchronizationContext.Post(ignored2 => dialog.SafeDismiss(), null));
-			}, null);
-
-			return tcs.Task;
+			return this.InputAsync(message, placeholder, title, okButton, cancelButton, duration, false);
 		}
 
 		public void ChooseSingle(string message, string[] options, int? chosenItem, Action<int?> answer = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
@@ -357,6 +331,65 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 					.SetNegativeButton(cancelButton, delegate
 					{
 						tcs.TrySetResult(new int[0]);
+					});
+
+				var dialog = this.CustomizeAndCreate(builder);
+				dialog.Show();
+
+				if (duration.HasValue)
+					Task.Delay(duration.Value).ContinueWith((delayTask) => Application.SynchronizationContext.Post(ignored2 => dialog.SafeDismiss(), null));
+			}, null);
+
+			return tcs.Task;
+		}
+
+		public void InputNumeric(string message, Action<bool, decimal> answer = null, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
+		{
+			var task = this.InputNumericAsync(message, placeholder, title, okButton, cancelButton, duration);
+
+			if (answer != null)
+				task.ContinueWith((completedTask) => Application.SynchronizationContext.Post(ignored => answer(completedTask.Result.Ok, completedTask.Result.Value), null));
+		}
+
+		public void InputNumeric(string message, Action<decimal> okClicked = null, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
+		{
+			var task = this.InputNumericAsync(message, placeholder, title, okButton, cancelButton, duration);
+
+			if (okClicked != null)
+				task.ContinueWith((completedTask) => Application.SynchronizationContext.Post(ignored => okClicked(completedTask.Result.Value), null));
+		}
+
+		public async Task<InputResponse<decimal>> InputNumericAsync(string message, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", TimeSpan? duration = null)
+		{
+			var response = await this.InputAsync(message, placeholder, title, okButton, cancelButton, duration, true);
+			return response.Ok ? new InputResponse<decimal> { Ok = true, Value = decimal.Parse(response.Value) } : new InputResponse<decimal> { Ok = false, Value = 0 };
+		}
+
+		private Task<InputResponse<string>> InputAsync(string message, string placeholder, string title, string okButton, string cancelButton, TimeSpan? duration, bool numeric)
+		{
+			var tcs = new TaskCompletionSource<InputResponse<string>>();
+
+			Application.SynchronizationContext.Post(ignored =>
+			{
+				if (CurrentActivity == null) return;
+
+				var input = new EditText(CurrentActivity) 
+				{
+					Hint = placeholder,
+					InputType = numeric ? (Android.Text.InputTypes.ClassNumber | Android.Text.InputTypes.NumberFlagDecimal) : Android.Text.InputTypes.ClassText
+				};
+
+				var builder = new AlertDialog.Builder(CurrentActivity)
+					.SetMessage(message)
+					.SetTitle(title)
+					.SetView(input)
+					.SetPositiveButton(okButton, delegate
+					{
+						tcs.TrySetResult(new InputResponse<string> { Ok = true, Value = input.Text });
+					})
+					.SetNegativeButton(cancelButton, delegate
+					{
+						tcs.TrySetResult(new InputResponse<string> { Ok = false, Value = input.Text });
 					});
 
 				var dialog = this.CustomizeAndCreate(builder);
