@@ -48,6 +48,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlertDialogExtensions.cs" />
+    <Compile Include="IAlertDialogBuilderCustomizer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="UserInteraction.cs" />
     <Compile Include="Plugin.cs" />
