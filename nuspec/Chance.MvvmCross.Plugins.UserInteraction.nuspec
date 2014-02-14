@@ -1,7 +1,7 @@
 ﻿<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>Chance.MvvmCross.Plugins.UserInteraction</id>
-		<version>1.1.0</version>
+		<version>1.1.1</version>
 		<title>MvvmCross UserInteraction Plugin</title>
 		<authors>Brian Chance</authors>
 		<owners>Brian Chance</owners>
@@ -11,12 +11,12 @@
 		<description>This package contains a 'UserInteraction' plugin for MvvmCross v3</description>
 		<tags>mvvm mvvmcross xamarin monodroid monotouch wpf wp wpdev windowsphone</tags>
 		<dependencies>
-		  <dependency id="MvvmCross.HotTuna.CrossCore" version="3.0.14" />
+		  <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
 		</dependencies>
 	</metadata>
 	<files>		
 		<!-- PCL -->
-		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+sl50+wp8\Chance.MvvmCross.Plugins.UserInteraction.dll" />
+		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\portable-win+net45+sl50+wp8+MonoAndroid+MonoTouch\Chance.MvvmCross.Plugins.UserInteraction.dll" />
 
 		<!-- phone - not supported
 		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\sl4-wp71\Chance.MvvmCross.Plugins.UserInteraction.dll" />

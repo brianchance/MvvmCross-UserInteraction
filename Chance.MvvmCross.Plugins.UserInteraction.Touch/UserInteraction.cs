@@ -88,18 +88,17 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 			return tcs.Task;
         }
 
-		public void Input(string message, Action<string> okClicked, string placeholder = null, string title = null, string okButton = "OK",
-		                string cancelButton = "Cancel")
+		public void Input(string message, Action<string> okClicked, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", string initialText = null)
 		{
 			Input(message, (ok, text) =>
 			{
 				if (ok)
 					okClicked(text);
 			},
-			placeholder, title, okButton, cancelButton);
+				placeholder, title, okButton, cancelButton, initialText);
 		}
 
-		public void Input(string message, Action<bool, string> answer, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+		public void Input(string message, Action<bool, string> answer, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", string initialText = null)
 		{
 			UIApplication.SharedApplication.InvokeOnMainThread(() =>
 			{
@@ -107,6 +106,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 				input.AlertViewStyle = UIAlertViewStyle.PlainTextInput;
 				var textField = input.GetTextField(0);
 				textField.Placeholder = placeholder;
+				textField.Text = initialText;
 				if (answer != null)
 				{
 					input.Clicked +=
@@ -117,10 +117,10 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 			});
 		}
 
-		public Task<InputResponse> InputAsync(string message, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+		public Task<InputResponse> InputAsync(string message, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", string initialText = null)
 		{
 			var tcs = new TaskCompletionSource<InputResponse>();
-			Input(message, (ok, text) => tcs.SetResult(new InputResponse {Ok = ok, Text = text}),	placeholder, title, okButton, cancelButton);
+			Input(message, (ok, text) => tcs.SetResult(new InputResponse {Ok = ok, Text = text}),	placeholder, title, okButton, cancelButton, initialText);
 			return tcs.Task;
 		}
 	}

@@ -105,20 +105,20 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			return tcs.Task;
 		}
 
-		public void Input(string message, Action<string> okClicked, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+		public void Input(string message, Action<string> okClicked, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", string initialText = null)
 		{
 			Input(message, (ok, text) => {
 				if (ok)
 					okClicked(text);
 			},
-			placeholder, title, okButton, cancelButton);
+				placeholder, title, okButton, cancelButton, initialText);
 		}
 
-		public void Input(string message, Action<bool, string> answer, string hint = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+		public void Input(string message, Action<bool, string> answer, string hint = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", string initialText = null)
 		{
 			Application.SynchronizationContext.Post(ignored => {
 				if (CurrentActivity == null) return;
-				var input = new EditText(CurrentActivity) { Hint = hint };
+				var input = new EditText(CurrentActivity) { Hint = hint, Text = initialText };
 
 				new AlertDialog.Builder(CurrentActivity)
 					.SetMessage(message)
@@ -136,10 +136,10 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			}, null);
 		}
 
-		public Task<InputResponse> InputAsync(string message, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel")
+		public Task<InputResponse> InputAsync(string message, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", string initialText = null)
 		{
 			var tcs = new TaskCompletionSource<InputResponse>();
-			Input(message, (ok, text) => tcs.SetResult(new InputResponse {Ok = ok, Text = text}),	placeholder, title, okButton, cancelButton);
+			Input(message, (ok, text) => tcs.SetResult(new InputResponse {Ok = ok, Text = text}),	placeholder, title, okButton, cancelButton, initialText);
 			return tcs.Task;
 		}
 	}
