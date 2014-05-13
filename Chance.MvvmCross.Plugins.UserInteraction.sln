@@ -7,18 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.Us
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.Touch", "Chance.MvvmCross.Plugins.UserInteraction.Touch\Chance.MvvmCross.Plugins.UserInteraction.Touch.csproj", "{CA487D21-3429-498C-971E-70A9C4453E6C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrap", "Bootstrap", "{CE291FF3-DF0C-4946-B6BD-F083D5CAF14B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Droid", "Droid", "{7EDF8691-1C9C-4453-9564-CE4A651E7824}"
-	ProjectSection(SolutionItems) = preProject
-		Chance.MvvmCross.Plugins.UserInteraction.Droid\UserInteractionPluginBootstrap.cs.pp = Chance.MvvmCross.Plugins.UserInteraction.Droid\UserInteractionPluginBootstrap.cs.pp
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Touch", "Touch", "{BB599BA6-F8DE-43AB-80BC-68537C4C316E}"
-	ProjectSection(SolutionItems) = preProject
-		Chance.MvvmCross.Plugins.UserInteraction.Touch\UserInteractionPluginBootstrap.cs.pp = Chance.MvvmCross.Plugins.UserInteraction.Touch\UserInteractionPluginBootstrap.cs.pp
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C6C2BCE6-73AC-4EDC-A08D-B12B2FF434CB}"
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
@@ -26,21 +14,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone", "Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone\Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone.csproj", "{3856B230-5B7B-4285-B591-A36C7BBE08CB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsPhone", "WindowsPhone", "{CABB35FF-C32A-4379-ACBF-F0B19FBBC9CD}"
-	ProjectSection(SolutionItems) = preProject
-		Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone\UserInteractionPluginBootstrap.cs.pp = Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone\UserInteractionPluginBootstrap.cs.pp
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.WindowsStore", "Chance.MvvmCross.Plugins.UserInteraction.WindowsStore\Chance.MvvmCross.Plugins.UserInteraction.WindowsStore.csproj", "{53FDB605-5B5D-4EA3-959E-D3F29B37686C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsStore", "WindowsStore", "{A5CA957C-99FB-4547-8E59-5265FD6B573E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{A70679AB-94DA-4DD6-8C6E-E932F703DB98}"
 	ProjectSection(SolutionItems) = preProject
-		Chance.MvvmCross.Plugins.UserInteraction.WindowsStore\UserInteractionPluginBootstrap.cs.pp = Chance.MvvmCross.Plugins.UserInteraction.WindowsStore\UserInteractionPluginBootstrap.cs.pp
+		nuspec\Chance.MvvmCross.Plugins.UserInteraction.nuspec = nuspec\Chance.MvvmCross.Plugins.UserInteraction.nuspec
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{DC07D288-0C1B-41A0-A814-0C285F6BDB65}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TouchBootstrapContent", "TouchBootstrapContent", "{F89BE4F7-B547-4C66-82DC-38AC0D741C46}"
 	ProjectSection(SolutionItems) = preProject
-		nuget\Chance.MvvmCross.Plugins.UserInteraction.1.0.0.nuspec = nuget\Chance.MvvmCross.Plugins.UserInteraction.1.0.0.nuspec
+		nuspec\TouchBootstrapContent\UserInteractionPluginBootstrap.cs.pp = nuspec\TouchBootstrapContent\UserInteractionPluginBootstrap.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BootstrapContent", "BootstrapContent", "{5BA27F18-EA41-4EE1-A460-ACA3BF54424F}"
+	ProjectSection(SolutionItems) = preProject
+		nuspec\BootstrapContent\UserInteractionPluginBootstrap.cs.pp = nuspec\BootstrapContent\UserInteractionPluginBootstrap.cs.pp
 	EndProjectSection
 EndProject
 Global
@@ -55,36 +43,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|ARM.ActiveCfg = Release|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|x64.ActiveCfg = Release|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|x86.ActiveCfg = Release|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|ARM.ActiveCfg = Release|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|x64.ActiveCfg = Release|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|x86.ActiveCfg = Release|Any CPU
-		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{CA487D21-3429-498C-971E-70A9C4453E6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA487D21-3429-498C-971E-70A9C4453E6C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA487D21-3429-498C-971E-70A9C4453E6C}.Release|ARM.ActiveCfg = Release|Any CPU
-		{CA487D21-3429-498C-971E-70A9C4453E6C}.Release|x64.ActiveCfg = Release|Any CPU
-		{CA487D21-3429-498C-971E-70A9C4453E6C}.Release|x86.ActiveCfg = Release|Any CPU
 		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Debug|ARM.ActiveCfg = Debug|ARM
@@ -115,17 +73,45 @@ Global
 		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Release|x64.Build.0 = Release|x64
 		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Release|x86.ActiveCfg = Release|x86
 		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Release|x86.Build.0 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|ARM.ActiveCfg = Release|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|x64.ActiveCfg = Release|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|x86.ActiveCfg = Release|Any CPU
+		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|ARM.ActiveCfg = Release|Any CPU
+		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|x64.ActiveCfg = Release|Any CPU
+		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|x86.ActiveCfg = Release|Any CPU
+		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CA487D21-3429-498C-971E-70A9C4453E6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA487D21-3429-498C-971E-70A9C4453E6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA487D21-3429-498C-971E-70A9C4453E6C}.Release|ARM.ActiveCfg = Release|Any CPU
+		{CA487D21-3429-498C-971E-70A9C4453E6C}.Release|x64.ActiveCfg = Release|Any CPU
+		{CA487D21-3429-498C-971E-70A9C4453E6C}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{7EDF8691-1C9C-4453-9564-CE4A651E7824} = {CE291FF3-DF0C-4946-B6BD-F083D5CAF14B}
-		{BB599BA6-F8DE-43AB-80BC-68537C4C316E} = {CE291FF3-DF0C-4946-B6BD-F083D5CAF14B}
-		{CABB35FF-C32A-4379-ACBF-F0B19FBBC9CD} = {CE291FF3-DF0C-4946-B6BD-F083D5CAF14B}
-		{A5CA957C-99FB-4547-8E59-5265FD6B573E} = {CE291FF3-DF0C-4946-B6BD-F083D5CAF14B}
+		{F89BE4F7-B547-4C66-82DC-38AC0D741C46} = {A70679AB-94DA-4DD6-8C6E-E932F703DB98}
+		{5BA27F18-EA41-4EE1-A460-ACA3BF54424F} = {A70679AB-94DA-4DD6-8C6E-E932F703DB98}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Chance.MvvmCross.Plugins.UserInteraction\Chance.MvvmCross.Plugins.UserInteraction.csproj
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
