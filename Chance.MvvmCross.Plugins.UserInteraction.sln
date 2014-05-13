@@ -11,12 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrap", "Bootstrap", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Droid", "Droid", "{7EDF8691-1C9C-4453-9564-CE4A651E7824}"
 	ProjectSection(SolutionItems) = preProject
-		Chance.MvvmCross.Plugins.UserInteraction.Droid\UserInteractionPluginBootstrap.cs = Chance.MvvmCross.Plugins.UserInteraction.Droid\UserInteractionPluginBootstrap.cs
+		Chance.MvvmCross.Plugins.UserInteraction.Droid\UserInteractionPluginBootstrap.cs.pp = Chance.MvvmCross.Plugins.UserInteraction.Droid\UserInteractionPluginBootstrap.cs.pp
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Touch", "Touch", "{BB599BA6-F8DE-43AB-80BC-68537C4C316E}"
 	ProjectSection(SolutionItems) = preProject
-		Chance.MvvmCross.Plugins.UserInteraction.Touch\UserInteractionPluginBootstrap.cs = Chance.MvvmCross.Plugins.UserInteraction.Touch\UserInteractionPluginBootstrap.cs
+		Chance.MvvmCross.Plugins.UserInteraction.Touch\UserInteractionPluginBootstrap.cs.pp = Chance.MvvmCross.Plugins.UserInteraction.Touch\UserInteractionPluginBootstrap.cs.pp
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C6C2BCE6-73AC-4EDC-A08D-B12B2FF434CB}"
@@ -28,14 +28,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.Us
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsPhone", "WindowsPhone", "{CABB35FF-C32A-4379-ACBF-F0B19FBBC9CD}"
 	ProjectSection(SolutionItems) = preProject
-		Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone\UserInteractionPluginBootstrap.cs = Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone\UserInteractionPluginBootstrap.cs
+		Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone\UserInteractionPluginBootstrap.cs.pp = Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone\UserInteractionPluginBootstrap.cs.pp
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.WindowsStore", "Chance.MvvmCross.Plugins.UserInteraction.WindowsStore\Chance.MvvmCross.Plugins.UserInteraction.WindowsStore.csproj", "{53FDB605-5B5D-4EA3-959E-D3F29B37686C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsStore", "WindowsStore", "{A5CA957C-99FB-4547-8E59-5265FD6B573E}"
 	ProjectSection(SolutionItems) = preProject
-		Chance.MvvmCross.Plugins.UserInteraction.WindowsStore\UserInteractionPluginBootstrap.cs = Chance.MvvmCross.Plugins.UserInteraction.WindowsStore\UserInteractionPluginBootstrap.cs
+		Chance.MvvmCross.Plugins.UserInteraction.WindowsStore\UserInteractionPluginBootstrap.cs.pp = Chance.MvvmCross.Plugins.UserInteraction.WindowsStore\UserInteractionPluginBootstrap.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{DC07D288-0C1B-41A0-A814-0C285F6BDB65}"
+	ProjectSection(SolutionItems) = preProject
+		nuget\Chance.MvvmCross.Plugins.UserInteraction.1.0.0.nuspec = nuget\Chance.MvvmCross.Plugins.UserInteraction.1.0.0.nuspec
 	EndProjectSection
 EndProject
 Global
