@@ -33,18 +33,17 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.WindowsStore
             result.ContinueWith((button) => answer(button.Result));
         }
 
-        public Task<bool> ConfirmAsync(string message, string title = "", string okButton = "OK", string cancelButton = "Cancel")
+        public async Task<bool> ConfirmAsync(string message, string title = "", string okButton = "OK", string cancelButton = "Cancel")
         {
-            var complete = new TaskCompletionSource<bool>();
-
+            var result = false;
             var box = new MessageDialog(message, title);
 
-            box.Commands.Add(new UICommand(okButton, delegate { complete.TrySetResult(true); }));
-            box.Commands.Add(new UICommand(cancelButton, delegate { complete.TrySetResult(false); }));
+            box.Commands.Add(new UICommand(okButton, delegate { result = true; }));
+            box.Commands.Add(new UICommand(cancelButton, delegate { result = false; }));
 
-            box.ShowAsync();
+            await box.ShowAsync();
 
-            return complete.Task;
+            return result;
         }
 
 
@@ -100,19 +99,19 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.WindowsStore
             result.ContinueWith((value) => answer(value.Result));
         }
 
-        public Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
+        public async Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
         {
-            var response = new TaskCompletionSource<ConfirmThreeButtonsResponse>();
 
+            ConfirmThreeButtonsResponse result = ConfirmThreeButtonsResponse.Neutral;
             var box = new MessageDialog(message, title ?? string.Empty);
 
-            box.Commands.Add(new UICommand(positive, delegate { response.TrySetResult(ConfirmThreeButtonsResponse.Positive); }));
-            box.Commands.Add(new UICommand(neutral, delegate { response.TrySetResult(ConfirmThreeButtonsResponse.Neutral); }));
-            box.Commands.Add(new UICommand(negative, delegate { response.TrySetResult(ConfirmThreeButtonsResponse.Negative); }));
+            box.Commands.Add(new UICommand(positive, delegate { result = ConfirmThreeButtonsResponse.Positive; }));
+            box.Commands.Add(new UICommand(neutral, delegate { result = ConfirmThreeButtonsResponse.Neutral; }));
+            box.Commands.Add(new UICommand(negative, delegate { result = ConfirmThreeButtonsResponse.Negative; }));
 
-            box.ShowAsync();
+            await box.ShowAsync();
 
-            return response.Task;
+            return result;
         }
     }
 }
