@@ -35,7 +35,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 		public Task<bool> ConfirmAsync(string message, string title = "", string okButton = "OK", string cancelButton = "Cancel")
 		{
 			var tcs = new TaskCompletionSource<bool>();
-			Confirm(message, tcs.SetResult, title, okButton, cancelButton);
+			Confirm(message, tcs.TrySetResult, title, okButton, cancelButton);
 			return tcs.Task;
         }
 
@@ -61,9 +61,8 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 
         public Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
         {
-
             var tcs = new TaskCompletionSource<ConfirmThreeButtonsResponse>();
-            ConfirmThreeButtons(message, tcs.SetResult, title, positive, negative, neutral);
+            ConfirmThreeButtons(message, tcs.TrySetResult, title, positive, negative, neutral);
             return tcs.Task;
         }
 
@@ -84,7 +83,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 		public Task AlertAsync(string message, string title = "", string okButton = "OK")
 		{
 			var tcs = new TaskCompletionSource<object>();
-			Alert(message, () => tcs.SetResult(null), title, okButton);
+			Alert(message, () => tcs.TrySetResult(null), title, okButton);
 			return tcs.Task;
         }
 
@@ -120,7 +119,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 		public Task<InputResponse> InputAsync(string message, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", string initialText = null)
 		{
 			var tcs = new TaskCompletionSource<InputResponse>();
-			Input(message, (ok, text) => tcs.SetResult(new InputResponse {Ok = ok, Text = text}),	placeholder, title, okButton, cancelButton, initialText);
+			Input(message, (ok, text) => tcs.TrySetResult(new InputResponse {Ok = ok, Text = text}),	placeholder, title, okButton, cancelButton, initialText);
 			return tcs.Task;
 		}
 	}
