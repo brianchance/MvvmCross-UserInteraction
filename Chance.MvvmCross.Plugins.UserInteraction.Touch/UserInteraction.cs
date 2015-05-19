@@ -35,7 +35,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 		public Task<bool> ConfirmAsync(string message, string title = "", string okButton = "OK", string cancelButton = "Cancel")
 		{
 			var tcs = new TaskCompletionSource<bool>();
-			Confirm(message, tcs.TrySetResult, title, okButton, cancelButton);
+			Confirm(message, (r) => tcs.TrySetResult(r), title, okButton, cancelButton);
 			return tcs.Task;
         }
 
@@ -62,7 +62,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
         public Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
         {
             var tcs = new TaskCompletionSource<ConfirmThreeButtonsResponse>();
-            ConfirmThreeButtons(message, tcs.TrySetResult, title, positive, negative, neutral);
+			ConfirmThreeButtons(message, (r) => tcs.TrySetResult(r), title, positive, negative, neutral);
             return tcs.Task;
         }
 
