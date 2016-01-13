@@ -104,11 +104,17 @@
     <Compile Include="UserInteraction.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Cirrious.CrossCore">
-      <HintPath>..\lib\WindowsStore\Cirrious.CrossCore.dll</HintPath>
+    <Reference Include="Cirrious.CrossCore, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta7\lib\netcore45\Cirrious.CrossCore.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Cirrious.CrossCore.WindowsStore">
-      <HintPath>..\lib\WindowsStore\Cirrious.CrossCore.WindowsStore.dll</HintPath>
+    <Reference Include="Cirrious.CrossCore.WindowsStore, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta7\lib\netcore45\Cirrious.CrossCore.WindowsStore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Localization, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta7\lib\netcore45\Cirrious.MvvmCross.Localization.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WinRTXamlToolkit">
       <HintPath>..\packages\WinRTXamlToolkit.1.6.1.3\lib\netcore45\WinRTXamlToolkit.dll</HintPath>
