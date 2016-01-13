@@ -53,7 +53,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.WindowsCommon
         {
             var dialog = new MessageDialog(message, title);
             dialog.Commands.Add(new UICommand(okButton));
-            dialog.ShowAsync();
+            return dialog.ShowAsync().AsTask();
         }
 
 
