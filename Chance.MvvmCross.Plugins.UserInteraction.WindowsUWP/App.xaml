@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP"
+    RequestedTheme="Light">
+
+</Application>
