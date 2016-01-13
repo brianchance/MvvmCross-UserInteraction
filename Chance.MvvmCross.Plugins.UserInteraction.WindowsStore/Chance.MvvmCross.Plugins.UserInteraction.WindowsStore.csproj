@@ -116,6 +116,18 @@
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta7\lib\netcore45\Cirrious.MvvmCross.Localization.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MvvmCross.Localization, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Platform.4.0.0-beta8\lib\netcore45\MvvmCross.Localization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Platform, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Platform.4.0.0-beta8\lib\netcore45\MvvmCross.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.WindowsStore, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Platform.4.0.0-beta8\lib\netcore45\MvvmCross.Platform.WindowsStore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WinRTXamlToolkit">
       <HintPath>..\packages\WinRTXamlToolkit.1.6.1.3\lib\netcore45\WinRTXamlToolkit.dll</HintPath>
     </Reference>
