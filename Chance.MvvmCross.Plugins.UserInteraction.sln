@@ -37,8 +37,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.Us
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.WindowsPhoneStore", "Chance.MvvmCross.Plugins.UserInteraction.WindowsPhoneStore\Chance.MvvmCross.Plugins.UserInteraction.WindowsPhoneStore.csproj", "{876DC489-4780-48DF-B02B-35F93458F386}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP", "Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP\Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP.csproj", "{F064AD0D-23A8-4118-8371-48BCADB0D2FF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,26 +137,6 @@ Global
 		{876DC489-4780-48DF-B02B-35F93458F386}.Release|x64.ActiveCfg = Release|Any CPU
 		{876DC489-4780-48DF-B02B-35F93458F386}.Release|x86.ActiveCfg = Release|x86
 		{876DC489-4780-48DF-B02B-35F93458F386}.Release|x86.Build.0 = Release|x86
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Debug|ARM.ActiveCfg = Debug|ARM
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Debug|ARM.Build.0 = Debug|ARM
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Debug|ARM.Deploy.0 = Debug|ARM
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Debug|x64.ActiveCfg = Debug|x64
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Debug|x64.Build.0 = Debug|x64
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Debug|x64.Deploy.0 = Debug|x64
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Debug|x86.ActiveCfg = Debug|x86
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Debug|x86.Build.0 = Debug|x86
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Debug|x86.Deploy.0 = Debug|x86
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Release|Any CPU.ActiveCfg = Release|x86
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Release|ARM.ActiveCfg = Release|ARM
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Release|ARM.Build.0 = Release|ARM
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Release|ARM.Deploy.0 = Release|ARM
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Release|x64.ActiveCfg = Release|x64
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Release|x64.Build.0 = Release|x64
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Release|x64.Deploy.0 = Release|x64
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Release|x86.ActiveCfg = Release|x86
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Release|x86.Build.0 = Release|x86
-		{F064AD0D-23A8-4118-8371-48BCADB0D2FF}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
