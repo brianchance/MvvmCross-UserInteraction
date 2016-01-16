@@ -1,1 +1,2 @@
-nuget push Chance.MvvmCross.Plugins.UserInteraction.1.0.0.nupkg
+nuget push Birdie*.nupkg
+pause
