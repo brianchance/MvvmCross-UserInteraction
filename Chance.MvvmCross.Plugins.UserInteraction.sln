@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction", "Chance.MvvmCross.Plugins.UserInteraction\Chance.MvvmCross.Plugins.UserInteraction.csproj", "{C912911A-2216-447C-ADF4-8DC190804D75}"
 EndProject
@@ -20,7 +20,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.Us
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{A70679AB-94DA-4DD6-8C6E-E932F703DB98}"
 	ProjectSection(SolutionItems) = preProject
-		nuspec\Chance.MvvmCross.Plugins.UserInteraction.nuspec = nuspec\Chance.MvvmCross.Plugins.UserInteraction.nuspec
+		nuspec\Birdie.MvvmCross.Plugins.UserInteraction.nuspec = nuspec\Birdie.MvvmCross.Plugins.UserInteraction.nuspec
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TouchBootstrapContent", "TouchBootstrapContent", "{F89BE4F7-B547-4C66-82DC-38AC0D741C46}"

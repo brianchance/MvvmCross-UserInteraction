@@ -1,12 +1,12 @@
 ﻿<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>Birdie.MvvmCross.Plugins.UserInteraction</id>
-		<version>1.2.0</version>
+		<version>1.2.0-beta8</version>
 		<title>MvvmCross UserInteraction Plugin</title>
 		<authors>Brian Chance,Ivan Toledo</authors>
 		<owners>Ivan Toledo</owners>
 		<licenseUrl>https://github.com/brianchance/MvvmCross-UserInteraction/blob/master/LICENSE</licenseUrl>
-		<projectUrl>https://github.com/brianchance/MvvmCross-UserInteraction</projectUrl>
+		<projectUrl>https://github.com/itoledo/MvvmCross-UserInteraction</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>This package contains a 'UserInteraction' plugin for MvvmCross v4</description>
 		<tags>mvvm mvvmcross xamarin monodroid monotouch wp wpdev windowsphone uwp</tags>
