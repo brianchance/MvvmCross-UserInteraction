@@ -21,24 +21,34 @@
 		<!-- phone -->
 		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\wp8\Chance.MvvmCross.Plugins.UserInteraction.dll" />
 		<file src="..\bin\Release\WindowsPhone\Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone.dll" target="lib\wp8\Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone.dll" />
-        <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
+    <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
 
 		<!-- store -->
 		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\netcore45\Chance.MvvmCross.Plugins.UserInteraction.dll" />
 		<file src="..\bin\Release\WindowsStore\Chance.MvvmCross.Plugins.UserInteraction.WindowsStore.dll" target="lib\netcore45\Chance.MvvmCross.Plugins.UserInteraction.WindowsStore.dll" />
-        <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\netcore45\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
+    <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\netcore45\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
 				
 		<!-- droid -->
 		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\MonoAndroid\Chance.MvvmCross.Plugins.UserInteraction.dll" />
 		<file src="..\bin\Release\Droid\Chance.MvvmCross.Plugins.UserInteraction.Droid.dll" target="lib\MonoAndroid\Chance.MvvmCross.Plugins.UserInteraction.Droid.dll" />
-        <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
+    <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
 		
 		<!-- touch -->
 		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\Xamarin.iOS10\Chance.MvvmCross.Plugins.UserInteraction.dll" />
 		<file src="..\bin\Release\Touch\Chance.MvvmCross.Plugins.UserInteraction.Touch.dll" target="lib\Xamarin.iOS10\Chance.MvvmCross.Plugins.UserInteraction.Touch.dll" />
-        <file src="TouchBootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\Xamarin.iOS10\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
+    <file src="TouchBootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\Xamarin.iOS10\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
 
-        <!-- common 
+    <!-- UWP -->
+    <file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\uap10.0\Chance.MvvmCross.Plugins.UserInteraction.dll" />
+    <file src="..\bin\Release\WindowsUWP\Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP.dll" target="lib\uap10.0\Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP.dll" />
+    <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\uap10.0\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
+
+    <!-- wpa81 -->
+    <file src="..\bin\Release\WindowsPhoneStore\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\wpa81\Chance.MvvmCross.Plugins.UserInteraction.dll" />
+    <file src="..\bin\Release\WindowsPhoneStore\Chance.MvvmCross.Plugins.UserInteraction.WindowsPhoneStore.dll" target="lib\wpa81\Chance.MvvmCross.Plugins.UserInteraction.WindowsPhoneStore.dll" />
+    <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\wpa81\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
+    
+    <!-- common 
 		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\win81\Chance.MvvmCross.Plugins.UserInteraction.dll" />
 		<file src="..\bin\Release\WindowsCommon\Chance.MvvmCross.Plugins.UserInteraction.WindowsCommon.dll" target="lib\win81\Chance.MvvmCross.Plugins.UserInteraction.WindowsStore.dll" />
         <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\win81\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
