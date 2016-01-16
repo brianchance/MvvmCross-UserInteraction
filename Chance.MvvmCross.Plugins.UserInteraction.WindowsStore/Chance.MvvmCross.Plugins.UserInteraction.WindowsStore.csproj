@@ -104,27 +104,15 @@
     <Compile Include="UserInteraction.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Cirrious.CrossCore, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta7\lib\netcore45\Cirrious.CrossCore.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Cirrious.CrossCore.WindowsStore, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta7\lib\netcore45\Cirrious.CrossCore.WindowsStore.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Localization, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta7\lib\netcore45\Cirrious.MvvmCross.Localization.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Localization, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="MvvmCross.Localization">
       <HintPath>..\packages\MvvmCross.Platform.4.0.0-beta8\lib\netcore45\MvvmCross.Localization.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmCross.Platform, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="MvvmCross.Platform">
       <HintPath>..\packages\MvvmCross.Platform.4.0.0-beta8\lib\netcore45\MvvmCross.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmCross.Platform.WindowsStore, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="MvvmCross.Platform.WindowsStore">
       <HintPath>..\packages\MvvmCross.Platform.4.0.0-beta8\lib\netcore45\MvvmCross.Platform.WindowsStore.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -139,7 +127,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>

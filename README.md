@@ -1,6 +1,8 @@
 MvvmCross-UserInteraction Plugin
 ================================
 
+This is a repack of Chance.Mvvmcross.Plugins.UserInteraction for MvvmCross 4.0.0-beta8, adding wpa81 and uwp targets.
+
 MvvmCross plugin for interacting with the user from a view model. 
 ##Features
 1. Alert - simple alert to the user, async or optional callback when done
