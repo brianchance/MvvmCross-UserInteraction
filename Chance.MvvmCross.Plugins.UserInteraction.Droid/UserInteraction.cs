@@ -1,10 +1,10 @@
 using System;
 using Android.App;
 using Android.Content;
-using Cirrious.CrossCore;
 using Android.Widget;
-using Cirrious.CrossCore.Droid.Platform;
 using System.Threading.Tasks;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Droid.Platform;
 using AlertDialog = Android.Support.V7.App.AlertDialog;
 
 namespace Chance.MvvmCross.Plugins.UserInteraction.Droid

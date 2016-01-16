@@ -30,18 +30,6 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cirrious.CrossCore, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta7\lib\Xamarin.iOS10\Cirrious.CrossCore.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Cirrious.CrossCore.Touch, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta7\lib\Xamarin.iOS10\Cirrious.CrossCore.Touch.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Localization, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta7\lib\Xamarin.iOS10\Cirrious.MvvmCross.Localization.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="MvvmCross.Localization, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmCross.Platform.4.0.0-beta8\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
       <Private>True</Private>
