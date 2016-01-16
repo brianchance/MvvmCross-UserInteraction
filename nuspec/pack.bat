@@ -1,3 +1,3 @@
 del *.nupkg
-nuget pack Chance.MvvmCross.Plugins.UserInteraction.nuspec
+nuget pack Birdie.MvvmCross.Plugins.UserInteraction.nuspec
 pause

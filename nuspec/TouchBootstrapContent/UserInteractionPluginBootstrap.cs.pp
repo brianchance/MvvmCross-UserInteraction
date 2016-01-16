@@ -1,4 +1,5 @@
-using Cirrious.CrossCore.Plugins;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Plugins;
 
 namespace $rootnamespace$.Bootstrap
 {
