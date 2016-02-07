@@ -2,7 +2,7 @@ using System;
 using UIKit;
 using System.Threading.Tasks;
 
-namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
+namespace Chance.MvvmCross.Plugins.UserInteraction.Ios
 {
 	public class UserInteraction : IUserInteraction
 	{
