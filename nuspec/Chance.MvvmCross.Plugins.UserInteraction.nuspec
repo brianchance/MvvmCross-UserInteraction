@@ -33,9 +33,9 @@
 		<file src="..\bin\Release\Droid\Chance.MvvmCross.Plugins.UserInteraction.Droid.dll" target="lib\MonoAndroid\Chance.MvvmCross.Plugins.UserInteraction.Droid.dll" />
         <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
 		
-		<!-- touch -->
+		<!-- ios -->
 		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\Xamarin.iOS10\Chance.MvvmCross.Plugins.UserInteraction.dll" />
-		<file src="..\bin\Release\Touch\Chance.MvvmCross.Plugins.UserInteraction.Touch.dll" target="lib\Xamarin.iOS10\Chance.MvvmCross.Plugins.UserInteraction.Touch.dll" />
+		<file src="..\bin\Release\Touch\Chance.MvvmCross.Plugins.UserInteraction.Ios.dll" target="lib\Xamarin.iOS10\Chance.MvvmCross.Plugins.UserInteraction.Ios.dll" />
         <file src="TouchBootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\Xamarin.iOS10\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
 
         <!-- common 
