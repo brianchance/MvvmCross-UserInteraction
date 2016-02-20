@@ -107,16 +107,12 @@
     <Compile Include="UserInteraction.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\packages\MvvmCross.Platform.4.0.0-beta8\lib\netcore45\MvvmCross.Localization.dll</HintPath>
+    <Reference Include="MvvmCross.Platform, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Platform.4.0.0\lib\win81\MvvmCross.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\packages\MvvmCross.Platform.4.0.0-beta8\lib\netcore45\MvvmCross.Platform.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Platform.WindowsStore">
-      <HintPath>..\packages\MvvmCross.Platform.4.0.0-beta8\lib\netcore45\MvvmCross.Platform.WindowsStore.dll</HintPath>
+    <Reference Include="MvvmCross.Platform.WindowsCommon, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Platform.4.0.0\lib\win81\MvvmCross.Platform.WindowsCommon.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WinRTXamlToolkit">

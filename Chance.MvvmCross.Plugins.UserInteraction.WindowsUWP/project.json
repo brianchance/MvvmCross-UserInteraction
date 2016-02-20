@@ -1,7 +1,7 @@
 ﻿{
   "dependencies": {
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
-    "MvvmCross.Platform": "4.0.0-beta8",
+    "MvvmCross.Platform": "4.0.0",
     "WinRTXamlToolkit.UWP": "1.9.4"
   },
   "frameworks": {
