@@ -1,11 +1,11 @@
 using System;
 using Android.App;
 using Android.Content;
-using Cirrious.CrossCore;
 using Android.Widget;
-using Cirrious.CrossCore.Droid.Platform;
 using System.Threading.Tasks;
-using AlertDialog = Android.Support.V7.App.AlertDialog;
+//using AlertDialog = Android.Support.V7.App.AlertDialog;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Droid.Platform;
 
 namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 {
@@ -29,8 +29,9 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			//Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction();
 			Application.SynchronizationContext.Post(ignored => {
 				if (CurrentActivity == null) return;
-				new AlertDialog.Builder(CurrentActivity)
-					.SetMessage(message)
+				try{
+					new Android.Support.V7.App.AlertDialog.Builder(CurrentActivity)
+						.SetMessage(message)
 						.SetTitle(title)
 						.SetPositiveButton(okButton, delegate {
 							if (answer != null)
@@ -41,6 +42,23 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 								answer(false);
 						})
 						.Show();
+				}
+				catch(Exception ex)
+				{
+					new AlertDialog.Builder(CurrentActivity)
+						.SetMessage(message)
+						.SetTitle(title)
+						.SetPositiveButton(okButton, delegate {
+							if (answer != null)
+								answer(true);
+						})
+						.SetNegativeButton(cancelButton, delegate {	
+							if (answer != null)
+								answer(false);
+						})
+						.Show();
+				}
+
 			}, null);
 		}
 
@@ -57,22 +75,42 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 	        Application.SynchronizationContext.Post(ignored =>
             {
                 if (CurrentActivity == null) return;
-                new AlertDialog.Builder(CurrentActivity)
-                    .SetMessage(message)
-                        .SetTitle(title)
-                        .SetPositiveButton(positive, delegate {
-                            if (answer != null)
-                                answer(ConfirmThreeButtonsResponse.Positive);
-                        })
-                        .SetNegativeButton(negative, delegate {
-                            if (answer != null)
-                                answer(ConfirmThreeButtonsResponse.Negative);
-                        })
-                        .SetNeutralButton(neutral, delegate {
-                            if (answer != null)
-                                answer(ConfirmThreeButtonsResponse.Neutral);
-                        })
-                        .Show();
+				try{
+					new Android.Support.V7.App.AlertDialog.Builder(CurrentActivity)
+						.SetMessage(message)
+						.SetTitle(title)
+						.SetPositiveButton(positive, delegate {
+							if (answer != null)
+								answer(ConfirmThreeButtonsResponse.Positive);
+						})
+						.SetNegativeButton(negative, delegate {
+							if (answer != null)
+								answer(ConfirmThreeButtonsResponse.Negative);
+						})
+						.SetNeutralButton(neutral, delegate {
+							if (answer != null)
+								answer(ConfirmThreeButtonsResponse.Neutral);
+						})
+						.Show();
+				}
+				catch(Exception ex){
+					new AlertDialog.Builder(CurrentActivity)
+						.SetMessage(message)
+						.SetTitle(title)
+						.SetPositiveButton(positive, delegate {
+							if (answer != null)
+								answer(ConfirmThreeButtonsResponse.Positive);
+						})
+						.SetNegativeButton(negative, delegate {
+							if (answer != null)
+								answer(ConfirmThreeButtonsResponse.Negative);
+						})
+						.SetNeutralButton(neutral, delegate {
+							if (answer != null)
+								answer(ConfirmThreeButtonsResponse.Neutral);
+						})
+						.Show();
+				}
             }, null);
 	    }
 
@@ -88,14 +126,27 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 		{
 			Application.SynchronizationContext.Post(ignored => {
 				if (CurrentActivity == null) return;
-				new AlertDialog.Builder(CurrentActivity)
-					.SetMessage(message)
+				try{
+					new Android.Support.V7.App.AlertDialog.Builder(CurrentActivity)
+						.SetMessage(message)
 						.SetTitle(title)
 						.SetPositiveButton(okButton, delegate {
 							if (done != null)
 								done();
 						})
 						.Show();
+				}
+				catch(Exception ex){
+					new AlertDialog.Builder(CurrentActivity)
+						.SetMessage(message)
+						.SetTitle(title)
+						.SetPositiveButton(okButton, delegate {
+							if (done != null)
+								done();
+						})
+						.Show();
+				}
+
 			}, null);
 		}
 
@@ -121,8 +172,9 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 				if (CurrentActivity == null) return;
 				var input = new EditText(CurrentActivity) { Hint = hint, Text = initialText };
 
-				new AlertDialog.Builder(CurrentActivity)
-					.SetMessage(message)
+				try{
+					new Android.Support.V7.App.AlertDialog.Builder(CurrentActivity)
+						.SetMessage(message)
 						.SetTitle(title)
 						.SetView(input)
 						.SetPositiveButton(okButton, delegate {
@@ -134,6 +186,24 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 								answer(false, input.Text);
 						})
 						.Show();
+				}
+				catch(Exception ex)
+				{
+					new AlertDialog.Builder(CurrentActivity)
+						.SetMessage(message)
+						.SetTitle(title)
+						.SetView(input)
+						.SetPositiveButton(okButton, delegate {
+							if (answer != null)
+								answer(true, input.Text);
+						})
+						.SetNegativeButton(cancelButton, delegate {	
+							if (answer != null)
+								answer(false, input.Text);
+						})
+						.Show();
+				}
+
 			}, null);
 		}
 

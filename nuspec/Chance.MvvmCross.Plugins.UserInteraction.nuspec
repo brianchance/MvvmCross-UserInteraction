@@ -1,17 +1,17 @@
 ﻿<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>Chance.MvvmCross.Plugins.UserInteraction</id>
-		<version>1.1.3</version>
+		<version>1.1.4</version>
 		<title>MvvmCross UserInteraction Plugin</title>
 		<authors>Brian Chance</authors>
 		<owners>Brian Chance</owners>
 		<licenseUrl>https://github.com/brianchance/MvvmCross-UserInteraction/blob/master/LICENSE</licenseUrl>
 		<projectUrl>https://github.com/brianchance/MvvmCross-UserInteraction</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>This package contains a 'UserInteraction' plugin for MvvmCross v3</description>
+		<description>This package contains a 'UserInteraction' plugin for MvvmCross v4</description>
 		<tags>mvvm mvvmcross xamarin monodroid monotouch wp wpdev windowsphone</tags>
 		<dependencies>
-		  <dependency id="MvvmCross.HotTuna.CrossCore" version="3.5.0" />
+		  <dependency id="MvvmCross.Platform" version="4.0.0" />
 		</dependencies>
 	</metadata>
 	<files>		
@@ -33,9 +33,9 @@
 		<file src="..\bin\Release\Droid\Chance.MvvmCross.Plugins.UserInteraction.Droid.dll" target="lib\MonoAndroid\Chance.MvvmCross.Plugins.UserInteraction.Droid.dll" />
         <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
 		
-		<!-- touch -->
+		<!-- ios -->
 		<file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\Xamarin.iOS10\Chance.MvvmCross.Plugins.UserInteraction.dll" />
-		<file src="..\bin\Release\Touch\Chance.MvvmCross.Plugins.UserInteraction.Touch.dll" target="lib\Xamarin.iOS10\Chance.MvvmCross.Plugins.UserInteraction.Touch.dll" />
+		<file src="..\bin\Release\Touch\Chance.MvvmCross.Plugins.UserInteraction.Ios.dll" target="lib\Xamarin.iOS10\Chance.MvvmCross.Plugins.UserInteraction.Ios.dll" />
         <file src="TouchBootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\Xamarin.iOS10\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
 
         <!-- common 

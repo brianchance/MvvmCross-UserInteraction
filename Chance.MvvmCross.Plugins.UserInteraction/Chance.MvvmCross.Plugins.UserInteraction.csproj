@@ -51,8 +51,11 @@
   </Target>
   -->
   <ItemGroup>
-    <Reference Include="Cirrious.CrossCore">
-      <HintPath>..\lib\Portable\Cirrious.CrossCore.dll</HintPath>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\lib\Portable\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\lib\Portable\MvvmCross.Platform.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
