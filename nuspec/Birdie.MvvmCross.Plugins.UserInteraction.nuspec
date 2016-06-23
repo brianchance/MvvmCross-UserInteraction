@@ -11,7 +11,14 @@
 		<description>This package contains a 'UserInteraction' plugin for MvvmCross v4</description>
 		<tags>mvvm mvvmcross xamarin monodroid monotouch wp wpdev windowsphone uwp</tags>
 		<dependencies>
-		  <dependency id="MvvmCross.Platform" version="4.0.0" />
+		  <group>
+		    <dependency id="MvvmCross.Platform" version="4.0.0" />	
+		  </group>
+		  <group targetFramework="monoandroid">
+		    <dependency id="MvvmCross.Platform" version="4.0.0" />
+		    <dependency id="Xamarin.Android.Support.v4" />
+		    <dependency id="Xamarin.Android.Support.v7.AppCompat" />
+		  </group>
 		</dependencies>
 	</metadata>
 	<files>		
