@@ -22,11 +22,19 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 			{
 				var confirm = new UIAlertView(title ?? string.Empty, message,
 				                              null, cancelButton, okButton);
+
+				bool result = false;
+
+				confirm.Dismissed += (sender, e) =>
+				{
+					if ( null != answer)
+						answer(result);
+				};
+
 				if (answer != null)
 				{
 					confirm.Clicked +=
-						(sender, args) =>
-							answer(confirm.CancelButtonIndex != args.ButtonIndex);
+							   (sender, args) => result = confirm.CancelButtonIndex != args.ButtonIndex;
 				}
 				confirm.Show();
 			});
@@ -44,16 +52,23 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
             var confirm = new UIAlertView(title ?? string.Empty, message, null, negative, positive, neutral);
             if (answer != null)
             {
+				var result = ConfirmThreeButtonsResponse.Neutral;
+
+				confirm.Dismissed += (sender, e) =>
+				{
+					answer(result);
+				};
+
                 confirm.Clicked +=
                     (sender, args) =>
                     {
                         var buttonIndex = args.ButtonIndex;
-                        if (buttonIndex == confirm.CancelButtonIndex)
-                            answer(ConfirmThreeButtonsResponse.Negative);
-                        else if (buttonIndex == confirm.FirstOtherButtonIndex)
-                            answer(ConfirmThreeButtonsResponse.Positive);
-                        else
-                            answer(ConfirmThreeButtonsResponse.Neutral);
+						if (buttonIndex == confirm.CancelButtonIndex)
+							result = ConfirmThreeButtonsResponse.Negative;
+						else if (buttonIndex == confirm.FirstOtherButtonIndex)
+							result = ConfirmThreeButtonsResponse.Positive;
+						else
+							result = ConfirmThreeButtonsResponse.Neutral;
                     };
                 confirm.Show();
             }
@@ -73,7 +88,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 				var alert = new UIAlertView(title ?? string.Empty, message, null, okButton);
 				if (done != null)
 				{
-					alert.Clicked += (sender, args) => done();
+					alert.Dismissed += (sender, e) => done();
 				}
 				alert.Show();
 			});
@@ -108,9 +123,13 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 				textField.Text = initialText;
 				if (answer != null)
 				{
+					bool result = false;
+					input.Dismissed += (sender, e) =>
+						answer(result, textField.Text);
+
 					input.Clicked +=
-						(sender, args) =>
-							answer(input.CancelButtonIndex != args.ButtonIndex, textField.Text);
+							 (sender, args) =>
+								 result = input.CancelButtonIndex != args.ButtonIndex;
 				}
 				input.Show();
 			});
@@ -124,4 +143,3 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 		}
 	}
 }
-
