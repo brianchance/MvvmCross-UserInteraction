@@ -21,20 +21,12 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 			UIApplication.SharedApplication.InvokeOnMainThread(() =>
 			{
 				var confirm = new UIAlertView(title ?? string.Empty, message,
-				                              null, cancelButton, okButton);
-
-				bool result = false;
-
-				confirm.Dismissed += (sender, e) =>
-				{
-					if ( null != answer)
-						answer(result);
-				};
-
+											  null, cancelButton, okButton);
 				if (answer != null)
 				{
-					confirm.Clicked +=
-							   (sender, args) => result = confirm.CancelButtonIndex != args.ButtonIndex;
+					confirm.Dismissed +=
+						(sender, args) =>
+							answer(confirm.CancelButtonIndex != args.ButtonIndex);
 				}
 				confirm.Show();
 			});
@@ -45,41 +37,34 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 			var tcs = new TaskCompletionSource<bool>();
 			Confirm(message, (r) => tcs.TrySetResult(r), title, okButton, cancelButton);
 			return tcs.Task;
-        }
+		}
 
-        public void ConfirmThreeButtons(string message, Action<ConfirmThreeButtonsResponse> answer, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
-        {
-            var confirm = new UIAlertView(title ?? string.Empty, message, null, negative, positive, neutral);
-            if (answer != null)
-            {
-				var result = ConfirmThreeButtonsResponse.Neutral;
-
-				confirm.Dismissed += (sender, e) =>
-				{
-					answer(result);
-				};
-
-                confirm.Clicked +=
-                    (sender, args) =>
-                    {
-                        var buttonIndex = args.ButtonIndex;
+		public void ConfirmThreeButtons(string message, Action<ConfirmThreeButtonsResponse> answer, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
+		{
+			var confirm = new UIAlertView(title ?? string.Empty, message, null, negative, positive, neutral);
+			if (answer != null)
+			{
+				confirm.Dismissed +=
+					(sender, args) =>
+					{
+						var buttonIndex = args.ButtonIndex;
 						if (buttonIndex == confirm.CancelButtonIndex)
-							result = ConfirmThreeButtonsResponse.Negative;
+							answer(ConfirmThreeButtonsResponse.Negative);
 						else if (buttonIndex == confirm.FirstOtherButtonIndex)
-							result = ConfirmThreeButtonsResponse.Positive;
+							answer(ConfirmThreeButtonsResponse.Positive);
 						else
-							result = ConfirmThreeButtonsResponse.Neutral;
-                    };
-                confirm.Show();
-            }
-        }
+							answer(ConfirmThreeButtonsResponse.Neutral);
+					};
+				confirm.Show();
+			}
+		}
 
-        public Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
-        {
-            var tcs = new TaskCompletionSource<ConfirmThreeButtonsResponse>();
+		public Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
+		{
+			var tcs = new TaskCompletionSource<ConfirmThreeButtonsResponse>();
 			ConfirmThreeButtons(message, (r) => tcs.TrySetResult(r), title, positive, negative, neutral);
-            return tcs.Task;
-        }
+			return tcs.Task;
+		}
 
 		public void Alert(string message, Action done = null, string title = "", string okButton = "OK")
 		{
@@ -88,7 +73,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 				var alert = new UIAlertView(title ?? string.Empty, message, null, okButton);
 				if (done != null)
 				{
-					alert.Dismissed += (sender, e) => done();
+					alert.Dismissed += (sender, args) => done();
 				}
 				alert.Show();
 			});
@@ -100,7 +85,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 			var tcs = new TaskCompletionSource<object>();
 			Alert(message, () => tcs.TrySetResult(null), title, okButton);
 			return tcs.Task;
-        }
+		}
 
 		public void Input(string message, Action<string> okClicked, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", string initialText = null)
 		{
@@ -123,13 +108,9 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 				textField.Text = initialText;
 				if (answer != null)
 				{
-					bool result = false;
-					input.Dismissed += (sender, e) =>
-						answer(result, textField.Text);
-
-					input.Clicked +=
-							 (sender, args) =>
-								 result = input.CancelButtonIndex != args.ButtonIndex;
+					input.Dismissed +=
+						(sender, args) =>
+							answer(input.CancelButtonIndex != args.ButtonIndex, textField.Text);
 				}
 				input.Show();
 			});
@@ -138,7 +119,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 		public Task<InputResponse> InputAsync(string message, string placeholder = null, string title = null, string okButton = "OK", string cancelButton = "Cancel", string initialText = null)
 		{
 			var tcs = new TaskCompletionSource<InputResponse>();
-			Input(message, (ok, text) => tcs.TrySetResult(new InputResponse {Ok = ok, Text = text}),	placeholder, title, okButton, cancelButton, initialText);
+			Input(message, (ok, text) => tcs.TrySetResult(new InputResponse { Ok = ok, Text = text }), placeholder, title, okButton, cancelButton, initialText);
 			return tcs.Task;
 		}
 	}
