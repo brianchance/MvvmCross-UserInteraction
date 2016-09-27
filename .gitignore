@@ -1,5 +1,5 @@
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
-[Bb]in/
+[Bb]in/*
 [Oo]bj/
 
 # mstest test results
@@ -89,8 +89,6 @@ csx
 AppPackages/
 
 # Others
-[Bb]in
-[Oo]bj
 sql
 TestResults
 [Tt]est[Rr]esult*
@@ -111,3 +109,14 @@ UpgradeLog*.XML
 
 # Nuget package files
 *.nupkg
+
+![Bb]in/Release
+[Bb]in/Release/*
+![Bb]in/Release/WindowsPhone
+[Bb]in/Release/WindowsPhone/*
+![Bb]in/Release/WindowsPhone/Chance.MvvmCross.Plugins.UserInteraction.dll
+![Bb]in/Release/WindowsPhone/Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone.dll
+![Bb]in/Release/WindowsStore
+[Bb]in/Release/WindowsStore/*
+![Bb]in/Release/WindowsStore/Chance.MvvmCross.Plugins.UserInteraction.dll
+![Bb]in/Release/WindowsStore/Chance.MvvmCross.Plugins.UserInteraction.WindowsStore.dll
