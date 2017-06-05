@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BootstrapContent", "Bootstr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.WindowsCommon", "Chance.MvvmCross.Plugins.UserInteraction.WindowsCommon\Chance.MvvmCross.Plugins.UserInteraction.WindowsCommon.csproj", "{94F91390-3679-42B7-9856-EA58D8CAFEB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP", "Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP\Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP.csproj", "{F7DB4678-D524-4C7A-95ED-8CE83264F393}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.Uwp", "Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP\Chance.MvvmCross.Plugins.UserInteraction.Uwp.csproj", "{F7DB4678-D524-4C7A-95ED-8CE83264F393}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{17210BDD-8E15-41AE-9DF9-F2DBFC87F438}"
 	ProjectSection(SolutionItems) = preProject

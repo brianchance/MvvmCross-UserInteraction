@@ -7,7 +7,7 @@ using System.Windows;
 using Windows.UI.Popups;
 using WinRTXamlToolkit.Controls;
 
-namespace Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP
+namespace Chance.MvvmCross.Plugins.UserInteraction.Uwp
 {
     public class UserInteraction : IUserInteraction
     {

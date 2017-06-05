@@ -25090,9 +25090,9 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\devel\\git\\MvvmCross-UserInteraction\\Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP\\Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP.csproj",
-      "projectName": "Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP",
-      "projectPath": "C:\\devel\\git\\MvvmCross-UserInteraction\\Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP\\Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP.csproj",
+      "projectUniqueName": "C:\\devel\\git\\MvvmCross-UserInteraction\\Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP\\Chance.MvvmCross.Plugins.UserInteraction.Uwp.csproj",
+      "projectName": "Chance.MvvmCross.Plugins.UserInteraction.Uwp",
+      "projectPath": "C:\\devel\\git\\MvvmCross-UserInteraction\\Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP\\Chance.MvvmCross.Plugins.UserInteraction.Uwp.csproj",
       "projectJsonPath": "C:\\devel\\git\\MvvmCross-UserInteraction\\Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {

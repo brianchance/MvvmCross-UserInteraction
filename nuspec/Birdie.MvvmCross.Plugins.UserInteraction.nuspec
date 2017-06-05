@@ -1,7 +1,7 @@
 ﻿<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>Birdie.MvvmCross.Plugins.UserInteraction</id>
-		<version>1.5.0</version>
+		<version>1.5.1</version>
 		<title>MvvmCross UserInteraction Plugin</title>
 		<authors>Brian Chance,Ivan Toledo</authors>
 		<owners>Ivan Toledo</owners>
@@ -47,7 +47,7 @@
 
     <!-- UWP -->
     <file src="..\bin\Release\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll" target="lib\uap10.0\Chance.MvvmCross.Plugins.UserInteraction.dll" />
-    <file src="..\bin\Release\WindowsUWP\Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP.dll" target="lib\uap10.0\Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP.dll" />
+    <file src="..\bin\Release\Uwp\Chance.MvvmCross.Plugins.UserInteraction.Uwp.dll" target="lib\uap10.0\Chance.MvvmCross.Plugins.UserInteraction.Uwp.dll" />
     <file src="BootstrapContent\UserInteractionPluginBootstrap.cs.pp" target="content\uap10.0\Bootstrap\UserInteractionPluginBootstrap.cs.pp" />
 
     <!-- wpa81 -->
