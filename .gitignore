@@ -111,3 +111,7 @@ UpgradeLog*.XML
 
 # Nuget package files
 *.nupkg
+*.lock
+*.ide
+*.ide-shm
+*.ide-wal
