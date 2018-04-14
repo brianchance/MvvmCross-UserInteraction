@@ -1,7 +1,7 @@
 ﻿<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>Birdie.MvvmCross.Plugins.UserInteraction</id>
-		<version>1.5.7</version>
+		<version>1.5.7.1</version>
 		<title>MvvmCross UserInteraction Plugin</title>
 		<authors>Brian Chance,Ivan Toledo</authors>
 		<owners>Ivan Toledo</owners>
