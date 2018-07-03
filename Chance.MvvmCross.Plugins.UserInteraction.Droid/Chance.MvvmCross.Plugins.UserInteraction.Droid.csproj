@@ -39,11 +39,9 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MvvmCross.Platform, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Platform.5.7.0\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform.Droid, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Platform.5.7.0\lib\MonoAndroid\MvvmCross.Platform.Droid.dll</HintPath>
+    <Reference Include="Java.Interop" />
+    <Reference Include="MvvmCross, Version=6.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.6.1.2\lib\monoandroid81\MvvmCross.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -100,13 +98,13 @@
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Chance.MvvmCross.Plugins.UserInteraction\Chance.MvvmCross.Plugins.UserInteraction.csproj">
-      <Project>{C912911A-2216-447C-ADF4-8DC190804D75}</Project>
-      <Name>Chance.MvvmCross.Plugins.UserInteraction</Name>
+    <ProjectReference Include="..\Chance.MvvmCross.Plugins.UserInteraction.NetStandard\Chance.MvvmCross.Plugins.UserInteraction.NetStandard.csproj">
+      <Project>{5beb27b2-a3c9-43ec-bfff-c684c82ea435}</Project>
+      <Name>Chance.MvvmCross.Plugins.UserInteraction.NetStandard</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>

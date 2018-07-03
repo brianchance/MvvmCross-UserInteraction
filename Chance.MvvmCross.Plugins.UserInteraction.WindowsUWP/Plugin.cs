@@ -1,6 +1,6 @@
 using System;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace Chance.MvvmCross.Plugins.UserInteraction.Uwp
 {

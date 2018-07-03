@@ -76,6 +76,24 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 		public partial class Attribute
 		{
 			
+			// aapt resource value: 0x7f0100ff
+			public static int MvxBind = 2130772223;
+			
+			// aapt resource value: 0x7f010103
+			public static int MvxDropDownItemTemplate = 2130772227;
+			
+			// aapt resource value: 0x7f010104
+			public static int MvxGroupItemTemplate = 2130772228;
+			
+			// aapt resource value: 0x7f010102
+			public static int MvxItemTemplate = 2130772226;
+			
+			// aapt resource value: 0x7f010100
+			public static int MvxLang = 2130772224;
+			
+			// aapt resource value: 0x7f010101
+			public static int MvxTemplate = 2130772225;
+			
 			// aapt resource value: 0x7f010049
 			public static int actionBarDivider = 2130772041;
 			
@@ -1797,59 +1815,65 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0a0024
-			public static int ALT = 2131361828;
-			
-			// aapt resource value: 0x7f0a0025
-			public static int CTRL = 2131361829;
-			
 			// aapt resource value: 0x7f0a0026
-			public static int FUNCTION = 2131361830;
+			public static int ALT = 2131361830;
 			
 			// aapt resource value: 0x7f0a0027
-			public static int META = 2131361831;
+			public static int CTRL = 2131361831;
 			
 			// aapt resource value: 0x7f0a0028
-			public static int SHIFT = 2131361832;
+			public static int FUNCTION = 2131361832;
 			
 			// aapt resource value: 0x7f0a0029
-			public static int SYM = 2131361833;
+			public static int META = 2131361833;
 			
-			// aapt resource value: 0x7f0a0069
-			public static int action0 = 2131361897;
+			// aapt resource value: 0x7f0a000f
+			public static int MvvmCrossTagId = 2131361807;
 			
-			// aapt resource value: 0x7f0a0057
-			public static int action_bar = 2131361879;
+			// aapt resource value: 0x7f0a0010
+			public static int MvxBindingTagUnique = 2131361808;
+			
+			// aapt resource value: 0x7f0a002a
+			public static int SHIFT = 2131361834;
+			
+			// aapt resource value: 0x7f0a002b
+			public static int SYM = 2131361835;
+			
+			// aapt resource value: 0x7f0a006b
+			public static int action0 = 2131361899;
+			
+			// aapt resource value: 0x7f0a0059
+			public static int action_bar = 2131361881;
 			
 			// aapt resource value: 0x7f0a0000
 			public static int action_bar_activity_content = 2131361792;
 			
-			// aapt resource value: 0x7f0a0056
-			public static int action_bar_container = 2131361878;
+			// aapt resource value: 0x7f0a0058
+			public static int action_bar_container = 2131361880;
 			
-			// aapt resource value: 0x7f0a0052
-			public static int action_bar_root = 2131361874;
+			// aapt resource value: 0x7f0a0054
+			public static int action_bar_root = 2131361876;
 			
 			// aapt resource value: 0x7f0a0001
 			public static int action_bar_spinner = 2131361793;
 			
-			// aapt resource value: 0x7f0a0036
-			public static int action_bar_subtitle = 2131361846;
+			// aapt resource value: 0x7f0a0038
+			public static int action_bar_subtitle = 2131361848;
 			
-			// aapt resource value: 0x7f0a0035
-			public static int action_bar_title = 2131361845;
+			// aapt resource value: 0x7f0a0037
+			public static int action_bar_title = 2131361847;
 			
-			// aapt resource value: 0x7f0a0066
-			public static int action_container = 2131361894;
+			// aapt resource value: 0x7f0a0068
+			public static int action_container = 2131361896;
 			
-			// aapt resource value: 0x7f0a0058
-			public static int action_context_bar = 2131361880;
+			// aapt resource value: 0x7f0a005a
+			public static int action_context_bar = 2131361882;
 			
-			// aapt resource value: 0x7f0a006d
-			public static int action_divider = 2131361901;
+			// aapt resource value: 0x7f0a006f
+			public static int action_divider = 2131361903;
 			
-			// aapt resource value: 0x7f0a0067
-			public static int action_image = 2131361895;
+			// aapt resource value: 0x7f0a0069
+			public static int action_image = 2131361897;
 			
 			// aapt resource value: 0x7f0a0002
 			public static int action_menu_divider = 2131361794;
@@ -1857,119 +1881,119 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			// aapt resource value: 0x7f0a0003
 			public static int action_menu_presenter = 2131361795;
 			
-			// aapt resource value: 0x7f0a0054
-			public static int action_mode_bar = 2131361876;
-			
-			// aapt resource value: 0x7f0a0053
-			public static int action_mode_bar_stub = 2131361875;
-			
-			// aapt resource value: 0x7f0a0037
-			public static int action_mode_close_button = 2131361847;
-			
-			// aapt resource value: 0x7f0a0068
-			public static int action_text = 2131361896;
-			
-			// aapt resource value: 0x7f0a0076
-			public static int actions = 2131361910;
-			
-			// aapt resource value: 0x7f0a0038
-			public static int activity_chooser_view_content = 2131361848;
-			
-			// aapt resource value: 0x7f0a0019
-			public static int add = 2131361817;
-			
-			// aapt resource value: 0x7f0a004b
-			public static int alertTitle = 2131361867;
-			
-			// aapt resource value: 0x7f0a002a
-			public static int always = 2131361834;
-			
-			// aapt resource value: 0x7f0a0031
-			public static int async = 2131361841;
-			
-			// aapt resource value: 0x7f0a0021
-			public static int beginning = 2131361825;
-			
-			// aapt resource value: 0x7f0a0032
-			public static int blocking = 2131361842;
-			
-			// aapt resource value: 0x7f0a002f
-			public static int bottom = 2131361839;
-			
-			// aapt resource value: 0x7f0a003e
-			public static int buttonPanel = 2131361854;
-			
-			// aapt resource value: 0x7f0a006a
-			public static int cancel_action = 2131361898;
-			
-			// aapt resource value: 0x7f0a004e
-			public static int checkbox = 2131361870;
-			
-			// aapt resource value: 0x7f0a0072
-			public static int chronometer = 2131361906;
-			
-			// aapt resource value: 0x7f0a002b
-			public static int collapseActionView = 2131361835;
-			
-			// aapt resource value: 0x7f0a0041
-			public static int contentPanel = 2131361857;
-			
-			// aapt resource value: 0x7f0a0048
-			public static int custom = 2131361864;
-			
-			// aapt resource value: 0x7f0a0047
-			public static int customPanel = 2131361863;
+			// aapt resource value: 0x7f0a0056
+			public static int action_mode_bar = 2131361878;
 			
 			// aapt resource value: 0x7f0a0055
-			public static int decor_content_parent = 2131361877;
-			
-			// aapt resource value: 0x7f0a003b
-			public static int default_activity_button = 2131361851;
-			
-			// aapt resource value: 0x7f0a0012
-			public static int disableHome = 2131361810;
-			
-			// aapt resource value: 0x7f0a0059
-			public static int edit_query = 2131361881;
-			
-			// aapt resource value: 0x7f0a0022
-			public static int end = 2131361826;
-			
-			// aapt resource value: 0x7f0a0078
-			public static int end_padder = 2131361912;
+			public static int action_mode_bar_stub = 2131361877;
 			
 			// aapt resource value: 0x7f0a0039
-			public static int expand_activities_button = 2131361849;
+			public static int action_mode_close_button = 2131361849;
+			
+			// aapt resource value: 0x7f0a006a
+			public static int action_text = 2131361898;
+			
+			// aapt resource value: 0x7f0a0078
+			public static int actions = 2131361912;
+			
+			// aapt resource value: 0x7f0a003a
+			public static int activity_chooser_view_content = 2131361850;
+			
+			// aapt resource value: 0x7f0a001b
+			public static int add = 2131361819;
 			
 			// aapt resource value: 0x7f0a004d
-			public static int expanded_menu = 2131361869;
+			public static int alertTitle = 2131361869;
+			
+			// aapt resource value: 0x7f0a002c
+			public static int always = 2131361836;
 			
 			// aapt resource value: 0x7f0a0033
-			public static int forever = 2131361843;
+			public static int async = 2131361843;
+			
+			// aapt resource value: 0x7f0a0023
+			public static int beginning = 2131361827;
+			
+			// aapt resource value: 0x7f0a0034
+			public static int blocking = 2131361844;
+			
+			// aapt resource value: 0x7f0a0031
+			public static int bottom = 2131361841;
+			
+			// aapt resource value: 0x7f0a0040
+			public static int buttonPanel = 2131361856;
+			
+			// aapt resource value: 0x7f0a006c
+			public static int cancel_action = 2131361900;
+			
+			// aapt resource value: 0x7f0a0050
+			public static int checkbox = 2131361872;
+			
+			// aapt resource value: 0x7f0a0074
+			public static int chronometer = 2131361908;
+			
+			// aapt resource value: 0x7f0a002d
+			public static int collapseActionView = 2131361837;
+			
+			// aapt resource value: 0x7f0a0043
+			public static int contentPanel = 2131361859;
+			
+			// aapt resource value: 0x7f0a004a
+			public static int custom = 2131361866;
+			
+			// aapt resource value: 0x7f0a0049
+			public static int customPanel = 2131361865;
+			
+			// aapt resource value: 0x7f0a0057
+			public static int decor_content_parent = 2131361879;
+			
+			// aapt resource value: 0x7f0a003d
+			public static int default_activity_button = 2131361853;
+			
+			// aapt resource value: 0x7f0a0014
+			public static int disableHome = 2131361812;
+			
+			// aapt resource value: 0x7f0a005b
+			public static int edit_query = 2131361883;
+			
+			// aapt resource value: 0x7f0a0024
+			public static int end = 2131361828;
+			
+			// aapt resource value: 0x7f0a007a
+			public static int end_padder = 2131361914;
+			
+			// aapt resource value: 0x7f0a003b
+			public static int expand_activities_button = 2131361851;
+			
+			// aapt resource value: 0x7f0a004f
+			public static int expanded_menu = 2131361871;
+			
+			// aapt resource value: 0x7f0a0035
+			public static int forever = 2131361845;
 			
 			// aapt resource value: 0x7f0a0004
 			public static int home = 2131361796;
 			
-			// aapt resource value: 0x7f0a0013
-			public static int homeAsUp = 2131361811;
+			// aapt resource value: 0x7f0a0015
+			public static int homeAsUp = 2131361813;
 			
-			// aapt resource value: 0x7f0a003d
-			public static int icon = 2131361853;
+			// aapt resource value: 0x7f0a003f
+			public static int icon = 2131361855;
 			
-			// aapt resource value: 0x7f0a0077
-			public static int icon_group = 2131361911;
+			// aapt resource value: 0x7f0a0079
+			public static int icon_group = 2131361913;
 			
-			// aapt resource value: 0x7f0a002c
-			public static int ifRoom = 2131361836;
+			// aapt resource value: 0x7f0a002e
+			public static int ifRoom = 2131361838;
 			
-			// aapt resource value: 0x7f0a003a
-			public static int image = 2131361850;
+			// aapt resource value: 0x7f0a003c
+			public static int image = 2131361852;
 			
-			// aapt resource value: 0x7f0a0073
-			public static int info = 2131361907;
+			// aapt resource value: 0x7f0a0075
+			public static int info = 2131361909;
 			
-			// aapt resource value: 0x7f0a0034
-			public static int italic = 2131361844;
+			// aapt resource value: 0x7f0a0036
+			public static int italic = 2131361846;
 			
 			// aapt resource value: 0x7f0a0009
 			public static int line1 = 2131361801;
@@ -1977,44 +2001,44 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			// aapt resource value: 0x7f0a000a
 			public static int line3 = 2131361802;
 			
-			// aapt resource value: 0x7f0a000f
-			public static int listMode = 2131361807;
+			// aapt resource value: 0x7f0a0011
+			public static int listMode = 2131361809;
 			
-			// aapt resource value: 0x7f0a003c
-			public static int list_item = 2131361852;
-			
-			// aapt resource value: 0x7f0a006c
-			public static int media_actions = 2131361900;
-			
-			// aapt resource value: 0x7f0a0079
-			public static int message = 2131361913;
-			
-			// aapt resource value: 0x7f0a0023
-			public static int middle = 2131361827;
-			
-			// aapt resource value: 0x7f0a001a
-			public static int multiply = 2131361818;
-			
-			// aapt resource value: 0x7f0a002d
-			public static int never = 2131361837;
-			
-			// aapt resource value: 0x7f0a0014
-			public static int none = 2131361812;
-			
-			// aapt resource value: 0x7f0a0010
-			public static int normal = 2131361808;
-			
-			// aapt resource value: 0x7f0a0075
-			public static int notification_background = 2131361909;
-			
-			// aapt resource value: 0x7f0a006f
-			public static int notification_main_column = 2131361903;
+			// aapt resource value: 0x7f0a003e
+			public static int list_item = 2131361854;
 			
 			// aapt resource value: 0x7f0a006e
-			public static int notification_main_column_container = 2131361902;
+			public static int media_actions = 2131361902;
 			
-			// aapt resource value: 0x7f0a0040
-			public static int parentPanel = 2131361856;
+			// aapt resource value: 0x7f0a007b
+			public static int message = 2131361915;
+			
+			// aapt resource value: 0x7f0a0025
+			public static int middle = 2131361829;
+			
+			// aapt resource value: 0x7f0a001c
+			public static int multiply = 2131361820;
+			
+			// aapt resource value: 0x7f0a002f
+			public static int never = 2131361839;
+			
+			// aapt resource value: 0x7f0a0016
+			public static int none = 2131361814;
+			
+			// aapt resource value: 0x7f0a0012
+			public static int normal = 2131361810;
+			
+			// aapt resource value: 0x7f0a0077
+			public static int notification_background = 2131361911;
+			
+			// aapt resource value: 0x7f0a0071
+			public static int notification_main_column = 2131361905;
+			
+			// aapt resource value: 0x7f0a0070
+			public static int notification_main_column_container = 2131361904;
+			
+			// aapt resource value: 0x7f0a0042
+			public static int parentPanel = 2131361858;
 			
 			// aapt resource value: 0x7f0a0005
 			public static int progress_circular = 2131361797;
@@ -2022,98 +2046,98 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			// aapt resource value: 0x7f0a0006
 			public static int progress_horizontal = 2131361798;
 			
-			// aapt resource value: 0x7f0a0050
-			public static int radio = 2131361872;
+			// aapt resource value: 0x7f0a0052
+			public static int radio = 2131361874;
 			
-			// aapt resource value: 0x7f0a0074
-			public static int right_icon = 2131361908;
+			// aapt resource value: 0x7f0a0076
+			public static int right_icon = 2131361910;
 			
-			// aapt resource value: 0x7f0a0070
-			public static int right_side = 2131361904;
+			// aapt resource value: 0x7f0a0072
+			public static int right_side = 2131361906;
 			
-			// aapt resource value: 0x7f0a001b
-			public static int screen = 2131361819;
+			// aapt resource value: 0x7f0a001d
+			public static int screen = 2131361821;
 			
-			// aapt resource value: 0x7f0a0046
-			public static int scrollIndicatorDown = 2131361862;
+			// aapt resource value: 0x7f0a0048
+			public static int scrollIndicatorDown = 2131361864;
 			
-			// aapt resource value: 0x7f0a0042
-			public static int scrollIndicatorUp = 2131361858;
+			// aapt resource value: 0x7f0a0044
+			public static int scrollIndicatorUp = 2131361860;
 			
-			// aapt resource value: 0x7f0a0043
-			public static int scrollView = 2131361859;
-			
-			// aapt resource value: 0x7f0a005b
-			public static int search_badge = 2131361883;
-			
-			// aapt resource value: 0x7f0a005a
-			public static int search_bar = 2131361882;
-			
-			// aapt resource value: 0x7f0a005c
-			public static int search_button = 2131361884;
-			
-			// aapt resource value: 0x7f0a0061
-			public static int search_close_btn = 2131361889;
+			// aapt resource value: 0x7f0a0045
+			public static int scrollView = 2131361861;
 			
 			// aapt resource value: 0x7f0a005d
-			public static int search_edit_frame = 2131361885;
+			public static int search_badge = 2131361885;
 			
-			// aapt resource value: 0x7f0a0063
-			public static int search_go_btn = 2131361891;
+			// aapt resource value: 0x7f0a005c
+			public static int search_bar = 2131361884;
 			
 			// aapt resource value: 0x7f0a005e
-			public static int search_mag_icon = 2131361886;
+			public static int search_button = 2131361886;
+			
+			// aapt resource value: 0x7f0a0063
+			public static int search_close_btn = 2131361891;
 			
 			// aapt resource value: 0x7f0a005f
-			public static int search_plate = 2131361887;
-			
-			// aapt resource value: 0x7f0a0060
-			public static int search_src_text = 2131361888;
-			
-			// aapt resource value: 0x7f0a0064
-			public static int search_voice_btn = 2131361892;
+			public static int search_edit_frame = 2131361887;
 			
 			// aapt resource value: 0x7f0a0065
-			public static int select_dialog_listview = 2131361893;
+			public static int search_go_btn = 2131361893;
 			
-			// aapt resource value: 0x7f0a004f
-			public static int shortcut = 2131361871;
+			// aapt resource value: 0x7f0a0060
+			public static int search_mag_icon = 2131361888;
 			
-			// aapt resource value: 0x7f0a0015
-			public static int showCustom = 2131361813;
+			// aapt resource value: 0x7f0a0061
+			public static int search_plate = 2131361889;
 			
-			// aapt resource value: 0x7f0a0016
-			public static int showHome = 2131361814;
+			// aapt resource value: 0x7f0a0062
+			public static int search_src_text = 2131361890;
+			
+			// aapt resource value: 0x7f0a0066
+			public static int search_voice_btn = 2131361894;
+			
+			// aapt resource value: 0x7f0a0067
+			public static int select_dialog_listview = 2131361895;
+			
+			// aapt resource value: 0x7f0a0051
+			public static int shortcut = 2131361873;
 			
 			// aapt resource value: 0x7f0a0017
-			public static int showTitle = 2131361815;
+			public static int showCustom = 2131361815;
 			
-			// aapt resource value: 0x7f0a003f
-			public static int spacer = 2131361855;
+			// aapt resource value: 0x7f0a0018
+			public static int showHome = 2131361816;
+			
+			// aapt resource value: 0x7f0a0019
+			public static int showTitle = 2131361817;
+			
+			// aapt resource value: 0x7f0a0041
+			public static int spacer = 2131361857;
 			
 			// aapt resource value: 0x7f0a0007
 			public static int split_action_bar = 2131361799;
 			
-			// aapt resource value: 0x7f0a001c
-			public static int src_atop = 2131361820;
-			
-			// aapt resource value: 0x7f0a001d
-			public static int src_in = 2131361821;
-			
 			// aapt resource value: 0x7f0a001e
-			public static int src_over = 2131361822;
+			public static int src_atop = 2131361822;
 			
-			// aapt resource value: 0x7f0a006b
-			public static int status_bar_latest_event_content = 2131361899;
+			// aapt resource value: 0x7f0a001f
+			public static int src_in = 2131361823;
 			
-			// aapt resource value: 0x7f0a0051
-			public static int submenuarrow = 2131361873;
+			// aapt resource value: 0x7f0a0020
+			public static int src_over = 2131361824;
 			
-			// aapt resource value: 0x7f0a0062
-			public static int submit_area = 2131361890;
+			// aapt resource value: 0x7f0a006d
+			public static int status_bar_latest_event_content = 2131361901;
 			
-			// aapt resource value: 0x7f0a0011
-			public static int tabMode = 2131361809;
+			// aapt resource value: 0x7f0a0053
+			public static int submenuarrow = 2131361875;
+			
+			// aapt resource value: 0x7f0a0064
+			public static int submit_area = 2131361892;
+			
+			// aapt resource value: 0x7f0a0013
+			public static int tabMode = 2131361811;
 			
 			// aapt resource value: 0x7f0a000b
 			public static int tag_transition_group = 2131361803;
@@ -2124,44 +2148,44 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			// aapt resource value: 0x7f0a000d
 			public static int text2 = 2131361805;
 			
-			// aapt resource value: 0x7f0a0045
-			public static int textSpacerNoButtons = 2131361861;
+			// aapt resource value: 0x7f0a0047
+			public static int textSpacerNoButtons = 2131361863;
 			
-			// aapt resource value: 0x7f0a0044
-			public static int textSpacerNoTitle = 2131361860;
+			// aapt resource value: 0x7f0a0046
+			public static int textSpacerNoTitle = 2131361862;
 			
-			// aapt resource value: 0x7f0a0071
-			public static int time = 2131361905;
+			// aapt resource value: 0x7f0a0073
+			public static int time = 2131361907;
 			
 			// aapt resource value: 0x7f0a000e
 			public static int title = 2131361806;
 			
+			// aapt resource value: 0x7f0a004e
+			public static int titleDividerNoCustom = 2131361870;
+			
 			// aapt resource value: 0x7f0a004c
-			public static int titleDividerNoCustom = 2131361868;
+			public static int title_template = 2131361868;
 			
-			// aapt resource value: 0x7f0a004a
-			public static int title_template = 2131361866;
+			// aapt resource value: 0x7f0a0032
+			public static int top = 2131361842;
 			
-			// aapt resource value: 0x7f0a0030
-			public static int top = 2131361840;
+			// aapt resource value: 0x7f0a004b
+			public static int topPanel = 2131361867;
 			
-			// aapt resource value: 0x7f0a0049
-			public static int topPanel = 2131361865;
-			
-			// aapt resource value: 0x7f0a001f
-			public static int uniform = 2131361823;
+			// aapt resource value: 0x7f0a0021
+			public static int uniform = 2131361825;
 			
 			// aapt resource value: 0x7f0a0008
 			public static int up = 2131361800;
 			
-			// aapt resource value: 0x7f0a0018
-			public static int useLogo = 2131361816;
+			// aapt resource value: 0x7f0a001a
+			public static int useLogo = 2131361818;
 			
-			// aapt resource value: 0x7f0a002e
-			public static int withText = 2131361838;
+			// aapt resource value: 0x7f0a0030
+			public static int withText = 2131361840;
 			
-			// aapt resource value: 0x7f0a0020
-			public static int wrap_content = 2131361824;
+			// aapt resource value: 0x7f0a0022
+			public static int wrap_content = 2131361826;
 			
 			static Id()
 			{
@@ -4658,6 +4682,38 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 			
 			// aapt resource value: 8
 			public static int MenuView_subMenuArrow = 8;
+			
+			public static int[] MvxBinding = new int[] {
+					2130772223,
+					2130772224};
+			
+			// aapt resource value: 0
+			public static int MvxBinding_MvxBind = 0;
+			
+			// aapt resource value: 1
+			public static int MvxBinding_MvxLang = 1;
+			
+			public static int[] MvxControl = new int[] {
+					2130772225};
+			
+			// aapt resource value: 0
+			public static int MvxControl_MvxTemplate = 0;
+			
+			public static int[] MvxExpandableListView = new int[] {
+					2130772228};
+			
+			// aapt resource value: 0
+			public static int MvxExpandableListView_MvxGroupItemTemplate = 0;
+			
+			public static int[] MvxListView = new int[] {
+					2130772226,
+					2130772227};
+			
+			// aapt resource value: 1
+			public static int MvxListView_MvxDropDownItemTemplate = 1;
+			
+			// aapt resource value: 0
+			public static int MvxListView_MvxItemTemplate = 0;
 			
 			public static int[] PopupWindow = new int[] {
 					16843126,
