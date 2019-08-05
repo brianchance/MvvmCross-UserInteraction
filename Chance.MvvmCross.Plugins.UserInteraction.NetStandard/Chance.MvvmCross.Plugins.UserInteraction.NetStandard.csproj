@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Chance.MvvmCross.Plugins.UserInteraction</AssemblyName>
+    <RootNamespace>Chance.MvvmCross.Plugins.UserInteraction</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="mvvmcross" Version="6.1.2" />
+  </ItemGroup>
+
+</Project>

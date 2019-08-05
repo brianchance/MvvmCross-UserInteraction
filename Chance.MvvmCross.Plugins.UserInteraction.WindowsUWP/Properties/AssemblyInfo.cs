@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP")]
+[assembly: AssemblyTitle("Chance.MvvmCross.Plugins.UserInteraction.Uwp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP")]
+[assembly: AssemblyProduct("Chance.MvvmCross.Plugins.UserInteraction.Uwp")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

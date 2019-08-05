@@ -3,9 +3,9 @@ using Android.App;
 using Android.Content;
 using Android.Widget;
 using System.Threading.Tasks;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Droid.Platform;
 using AlertDialog = Android.Support.V7.App.AlertDialog;
+using MvvmCross;
+using MvvmCross.Platforms.Android;
 
 namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 {

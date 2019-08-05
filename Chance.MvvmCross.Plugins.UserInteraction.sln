@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction", "Chance.MvvmCross.Plugins.UserInteraction\Chance.MvvmCross.Plugins.UserInteraction.csproj", "{C912911A-2216-447C-ADF4-8DC190804D75}"
 EndProject
@@ -13,10 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone", "Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone\Chance.MvvmCross.Plugins.UserInteraction.WindowsPhone.csproj", "{3856B230-5B7B-4285-B591-A36C7BBE08CB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.WindowsStore", "Chance.MvvmCross.Plugins.UserInteraction.WindowsStore\Chance.MvvmCross.Plugins.UserInteraction.WindowsStore.csproj", "{53FDB605-5B5D-4EA3-959E-D3F29B37686C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{A70679AB-94DA-4DD6-8C6E-E932F703DB98}"
 	ProjectSection(SolutionItems) = preProject
@@ -33,11 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BootstrapContent", "Bootstr
 		nuspec\BootstrapContent\UserInteractionPluginBootstrap.cs.pp = nuspec\BootstrapContent\UserInteractionPluginBootstrap.cs.pp
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.WindowsCommon", "Chance.MvvmCross.Plugins.UserInteraction.WindowsCommon\Chance.MvvmCross.Plugins.UserInteraction.WindowsCommon.csproj", "{94F91390-3679-42B7-9856-EA58D8CAFEB3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.WindowsPhoneStore", "Chance.MvvmCross.Plugins.UserInteraction.WindowsPhoneStore\Chance.MvvmCross.Plugins.UserInteraction.WindowsPhoneStore.csproj", "{876DC489-4780-48DF-B02B-35F93458F386}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP", "Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP\Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP.csproj", "{F7DB4678-D524-4C7A-95ED-8CE83264F393}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.Uwp", "Chance.MvvmCross.Plugins.UserInteraction.WindowsUWP\Chance.MvvmCross.Plugins.UserInteraction.Uwp.csproj", "{F7DB4678-D524-4C7A-95ED-8CE83264F393}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{17210BDD-8E15-41AE-9DF9-F2DBFC87F438}"
 	ProjectSection(SolutionItems) = preProject
@@ -45,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{17210B
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.NetStandard", "Chance.MvvmCross.Plugins.UserInteraction.NetStandard\Chance.MvvmCross.Plugins.UserInteraction.NetStandard.csproj", "{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,64 +82,6 @@ Global
 		{CA487D21-3429-498C-971E-70A9C4453E6C}.Release|ARM.ActiveCfg = Release|Any CPU
 		{CA487D21-3429-498C-971E-70A9C4453E6C}.Release|x64.ActiveCfg = Release|Any CPU
 		{CA487D21-3429-498C-971E-70A9C4453E6C}.Release|x86.ActiveCfg = Release|Any CPU
-		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Debug|ARM.ActiveCfg = Debug|ARM
-		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Debug|ARM.Build.0 = Debug|ARM
-		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Debug|x86.ActiveCfg = Debug|x86
-		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Debug|x86.Build.0 = Debug|x86
-		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Release|ARM.ActiveCfg = Release|ARM
-		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Release|ARM.Build.0 = Release|ARM
-		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Release|x64.ActiveCfg = Release|Any CPU
-		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Release|x86.ActiveCfg = Release|x86
-		{3856B230-5B7B-4285-B591-A36C7BBE08CB}.Release|x86.Build.0 = Release|x86
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Debug|ARM.ActiveCfg = Debug|ARM
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Debug|ARM.Build.0 = Debug|ARM
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Debug|x64.ActiveCfg = Debug|x64
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Debug|x64.Build.0 = Debug|x64
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Debug|x86.ActiveCfg = Debug|x86
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Debug|x86.Build.0 = Debug|x86
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Release|ARM.ActiveCfg = Release|ARM
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Release|ARM.Build.0 = Release|ARM
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Release|x64.ActiveCfg = Release|x64
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Release|x64.Build.0 = Release|x64
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Release|x86.ActiveCfg = Release|x86
-		{53FDB605-5B5D-4EA3-959E-D3F29B37686C}.Release|x86.Build.0 = Release|x86
-		{94F91390-3679-42B7-9856-EA58D8CAFEB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94F91390-3679-42B7-9856-EA58D8CAFEB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94F91390-3679-42B7-9856-EA58D8CAFEB3}.Debug|ARM.ActiveCfg = Debug|ARM
-		{94F91390-3679-42B7-9856-EA58D8CAFEB3}.Debug|ARM.Build.0 = Debug|ARM
-		{94F91390-3679-42B7-9856-EA58D8CAFEB3}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{94F91390-3679-42B7-9856-EA58D8CAFEB3}.Debug|x86.ActiveCfg = Debug|x86
-		{94F91390-3679-42B7-9856-EA58D8CAFEB3}.Debug|x86.Build.0 = Debug|x86
-		{94F91390-3679-42B7-9856-EA58D8CAFEB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94F91390-3679-42B7-9856-EA58D8CAFEB3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{94F91390-3679-42B7-9856-EA58D8CAFEB3}.Release|ARM.ActiveCfg = Release|ARM
-		{94F91390-3679-42B7-9856-EA58D8CAFEB3}.Release|ARM.Build.0 = Release|ARM
-		{94F91390-3679-42B7-9856-EA58D8CAFEB3}.Release|x64.ActiveCfg = Release|Any CPU
-		{94F91390-3679-42B7-9856-EA58D8CAFEB3}.Release|x86.ActiveCfg = Release|x86
-		{94F91390-3679-42B7-9856-EA58D8CAFEB3}.Release|x86.Build.0 = Release|x86
-		{876DC489-4780-48DF-B02B-35F93458F386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{876DC489-4780-48DF-B02B-35F93458F386}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{876DC489-4780-48DF-B02B-35F93458F386}.Debug|ARM.ActiveCfg = Debug|ARM
-		{876DC489-4780-48DF-B02B-35F93458F386}.Debug|ARM.Build.0 = Debug|ARM
-		{876DC489-4780-48DF-B02B-35F93458F386}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{876DC489-4780-48DF-B02B-35F93458F386}.Debug|x86.ActiveCfg = Debug|x86
-		{876DC489-4780-48DF-B02B-35F93458F386}.Debug|x86.Build.0 = Debug|x86
-		{876DC489-4780-48DF-B02B-35F93458F386}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{876DC489-4780-48DF-B02B-35F93458F386}.Release|Any CPU.Build.0 = Release|Any CPU
-		{876DC489-4780-48DF-B02B-35F93458F386}.Release|ARM.ActiveCfg = Release|ARM
-		{876DC489-4780-48DF-B02B-35F93458F386}.Release|ARM.Build.0 = Release|ARM
-		{876DC489-4780-48DF-B02B-35F93458F386}.Release|x64.ActiveCfg = Release|Any CPU
-		{876DC489-4780-48DF-B02B-35F93458F386}.Release|x86.ActiveCfg = Release|x86
-		{876DC489-4780-48DF-B02B-35F93458F386}.Release|x86.Build.0 = Release|x86
 		{F7DB4678-D524-4C7A-95ED-8CE83264F393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F7DB4678-D524-4C7A-95ED-8CE83264F393}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7DB4678-D524-4C7A-95ED-8CE83264F393}.Debug|ARM.ActiveCfg = Debug|ARM
@@ -162,6 +98,22 @@ Global
 		{F7DB4678-D524-4C7A-95ED-8CE83264F393}.Release|x64.Build.0 = Release|x64
 		{F7DB4678-D524-4C7A-95ED-8CE83264F393}.Release|x86.ActiveCfg = Release|x86
 		{F7DB4678-D524-4C7A-95ED-8CE83264F393}.Release|x86.Build.0 = Release|x86
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Debug|ARM.Build.0 = Debug|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Debug|x64.Build.0 = Debug|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Debug|x86.Build.0 = Debug|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Release|ARM.ActiveCfg = Release|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Release|ARM.Build.0 = Release|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Release|x64.ActiveCfg = Release|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Release|x64.Build.0 = Release|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Release|x86.ActiveCfg = Release|Any CPU
+		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,6 +121,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F89BE4F7-B547-4C66-82DC-38AC0D741C46} = {A70679AB-94DA-4DD6-8C6E-E932F703DB98}
 		{5BA27F18-EA41-4EE1-A460-ACA3BF54424F} = {A70679AB-94DA-4DD6-8C6E-E932F703DB98}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3F2BB0E-F105-438E-B012-55D27442ED4D}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Chance.MvvmCross.Plugins.UserInteraction\Chance.MvvmCross.Plugins.UserInteraction.csproj

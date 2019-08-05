@@ -1,9 +1,10 @@
+using MvvmCross;
+using MvvmCross.Plugin;
 using System;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
 
 namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 {
+    [MvxPlugin]
 	public class Plugin : IMvxPlugin
 	{
 		public void Load() 
