@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction", "Chance.MvvmCross.Plugins.UserInteraction\Chance.MvvmCross.Plugins.UserInteraction.csproj", "{C912911A-2216-447C-ADF4-8DC190804D75}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.Droid", "Chance.MvvmCross.Plugins.UserInteraction.Droid\Chance.MvvmCross.Plugins.UserInteraction.Droid.csproj", "{5BE32F99-E41D-4D84-BBE8-E16A331C7767}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.Touch", "Chance.MvvmCross.Plugins.UserInteraction.Touch\Chance.MvvmCross.Plugins.UserInteraction.Touch.csproj", "{CA487D21-3429-498C-971E-70A9C4453E6C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C6C2BCE6-73AC-4EDC-A08D-B12B2FF434CB}"
@@ -38,7 +34,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{17210B
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.NetStandard", "Chance.MvvmCross.Plugins.UserInteraction.NetStandard\Chance.MvvmCross.Plugins.UserInteraction.NetStandard.csproj", "{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chance.MvvmCross.Plugins.UserInteraction.NetStandard", "Chance.MvvmCross.Plugins.UserInteraction.NetStandard\Chance.MvvmCross.Plugins.UserInteraction.NetStandard.csproj", "{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chance.MvvmCross.Plugins.UserInteraction.Droid", "Chance.MvvmCross.Plugins.UserInteraction.Droid\Chance.MvvmCross.Plugins.UserInteraction.Droid.csproj", "{5BE32F99-E41D-4D84-BBE8-E16A331C7767}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,28 +50,7 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|ARM.ActiveCfg = Release|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|x64.ActiveCfg = Release|Any CPU
-		{C912911A-2216-447C-ADF4-8DC190804D75}.Release|x86.ActiveCfg = Release|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|ARM.ActiveCfg = Release|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|x64.ActiveCfg = Release|Any CPU
-		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|x86.ActiveCfg = Release|Any CPU
 		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|ARM.ActiveCfg = Debug|Any CPU
 		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{CA487D21-3429-498C-971E-70A9C4453E6C}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -114,6 +91,22 @@ Global
 		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Release|x64.Build.0 = Release|Any CPU
 		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Release|x86.ActiveCfg = Release|Any CPU
 		{5BEB27B2-A3C9-43EC-BFFF-C684C82EA435}.Release|x86.Build.0 = Release|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|ARM.Build.0 = Debug|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|x64.Build.0 = Debug|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Debug|x86.Build.0 = Debug|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|ARM.ActiveCfg = Release|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|ARM.Build.0 = Release|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|x64.ActiveCfg = Release|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|x64.Build.0 = Release|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|x86.ActiveCfg = Release|Any CPU
+		{5BE32F99-E41D-4D84-BBE8-E16A331C7767}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

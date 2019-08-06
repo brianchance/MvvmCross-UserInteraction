@@ -9,7 +9,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 	{
 		public void Load() 
 		{
-			Mvx.RegisterType<IUserInteraction, UserInteraction>();
+			Mvx.IoCProvider.RegisterType<IUserInteraction, UserInteraction>();
 		}
 	}
 }

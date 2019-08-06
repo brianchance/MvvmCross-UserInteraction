@@ -6,6 +6,14 @@
     <RootNamespace>Chance.MvvmCross.Plugins.UserInteraction</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\bin\Debug\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\bin\Release\NetStandard\</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="mvvmcross" Version="6.1.2" />
   </ItemGroup>

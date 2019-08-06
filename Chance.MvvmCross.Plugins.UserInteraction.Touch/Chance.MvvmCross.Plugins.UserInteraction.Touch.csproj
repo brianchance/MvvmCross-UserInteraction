@@ -49,13 +49,13 @@
     <Compile Include="Plugin.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Chance.MvvmCross.Plugins.UserInteraction.NetStandard\Chance.MvvmCross.Plugins.UserInteraction.NetStandard.csproj">
       <Project>{5beb27b2-a3c9-43ec-bfff-c684c82ea435}</Project>
       <Name>Chance.MvvmCross.Plugins.UserInteraction.NetStandard</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

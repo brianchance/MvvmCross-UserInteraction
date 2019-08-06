@@ -12,7 +12,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Droid
 	public class UserInteraction : IUserInteraction
 	{
 		protected Activity CurrentActivity {
-			get { return Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity; }
+			get { return Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity; }
 		}
 
 		public void Confirm(string message, Action okClicked, string title = null, string okButton = "OK", string cancelButton = "Cancel")
