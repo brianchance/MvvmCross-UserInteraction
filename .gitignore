@@ -116,3 +116,4 @@ UpgradeLog*.XML
 *.ide-shm
 *.ide-wal
 /.vs
+.DS_Store

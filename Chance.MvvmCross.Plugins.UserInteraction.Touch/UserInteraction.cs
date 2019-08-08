@@ -20,15 +20,14 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 		{
 			UIApplication.SharedApplication.InvokeOnMainThread(() =>
 			{
-				var confirm = new UIAlertView(title ?? string.Empty, message,
-				                              null, cancelButton, okButton);
-				if (answer != null)
-				{
-					confirm.Clicked +=
-						(sender, args) =>
-							answer(confirm.CancelButtonIndex != args.ButtonIndex);
-				}
-				confirm.Show();
+                var confirm = UIAlertController.Create(title ?? string.Empty, message, UIAlertControllerStyle.Alert);
+                confirm.AddAction(UIAlertAction.Create(okButton, UIAlertActionStyle.Default, alert => {
+                    answer(true);
+                }));
+                confirm.AddAction(UIAlertAction.Create(cancelButton, UIAlertActionStyle.Cancel, alert => {
+                    answer(false);
+                }));
+                UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(confirm, true, null);
 			});
 		}
 
@@ -41,22 +40,21 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 
         public void ConfirmThreeButtons(string message, Action<ConfirmThreeButtonsResponse> answer, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
         {
-            var confirm = new UIAlertView(title ?? string.Empty, message, null, negative, positive, neutral);
-            if (answer != null)
+            UIApplication.SharedApplication.InvokeOnMainThread(() =>
             {
-                confirm.Clicked +=
-                    (sender, args) =>
-                    {
-                        var buttonIndex = args.ButtonIndex;
-                        if (buttonIndex == confirm.CancelButtonIndex)
-                            answer(ConfirmThreeButtonsResponse.Negative);
-                        else if (buttonIndex == confirm.FirstOtherButtonIndex)
-                            answer(ConfirmThreeButtonsResponse.Positive);
-                        else
-                            answer(ConfirmThreeButtonsResponse.Neutral);
-                    };
-                confirm.Show();
-            }
+                var confirm = UIAlertController.Create(title ?? string.Empty, message, UIAlertControllerStyle.Alert);
+                confirm.AddAction(UIAlertAction.Create(positive, UIAlertActionStyle.Default, alert => {
+                    answer(ConfirmThreeButtonsResponse.Positive);
+                }));
+                confirm.AddAction(UIAlertAction.Create(neutral, UIAlertActionStyle.Default, alert =>
+                {
+                    answer(ConfirmThreeButtonsResponse.Neutral);
+                }));
+                confirm.AddAction(UIAlertAction.Create(negative, UIAlertActionStyle.Cancel, alert => {
+                    answer(ConfirmThreeButtonsResponse.Negative);
+                }));
+                UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(confirm, true, null);
+            });
         }
 
         public Task<ConfirmThreeButtonsResponse> ConfirmThreeButtonsAsync(string message, string title = null, string positive = "Yes", string negative = "No", string neutral = "Maybe")
@@ -70,14 +68,12 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 		{
 			UIApplication.SharedApplication.InvokeOnMainThread(() =>
 			{
-				var alert = new UIAlertView(title ?? string.Empty, message, null, okButton);
-				if (done != null)
-				{
-					alert.Clicked += (sender, args) => done();
-				}
-				alert.Show();
-			});
-
+                var alert = UIAlertController.Create(title ?? string.Empty, message, UIAlertControllerStyle.Alert);
+                alert.AddAction(UIAlertAction.Create(okButton, UIAlertActionStyle.Default, x => {
+                    done?.Invoke();
+                }));
+                UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(alert, true, null);
+            });
 		}
 
 		public Task AlertAsync(string message, string title = "", string okButton = "OK")
@@ -101,18 +97,18 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 		{
 			UIApplication.SharedApplication.InvokeOnMainThread(() =>
 			{
-				var input = new UIAlertView(title ?? string.Empty, message, null, cancelButton, okButton);
-				input.AlertViewStyle = UIAlertViewStyle.PlainTextInput;
-				var textField = input.GetTextField(0);
-				textField.Placeholder = placeholder;
-				textField.Text = initialText;
-				if (answer != null)
-				{
-					input.Clicked +=
-						(sender, args) =>
-							answer(input.CancelButtonIndex != args.ButtonIndex, textField.Text);
-				}
-				input.Show();
+                var confirm = UIAlertController.Create(title ?? string.Empty, message, UIAlertControllerStyle.Alert);
+                confirm.AddTextField(textField => {
+                    textField.Placeholder = placeholder;
+                    textField.Text = initialText;
+                });
+                confirm.AddAction(UIAlertAction.Create(okButton, UIAlertActionStyle.Default, alert => {
+                    answer(true, confirm.TextFields[0].Text);
+                }));
+                confirm.AddAction(UIAlertAction.Create(cancelButton, UIAlertActionStyle.Cancel, alert => {
+                    answer(false, confirm.TextFields[0].Text);
+                }));
+                UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(confirm, true, null);
 			});
 		}
 

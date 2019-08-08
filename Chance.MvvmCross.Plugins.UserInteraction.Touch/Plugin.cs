@@ -9,7 +9,7 @@ namespace Chance.MvvmCross.Plugins.UserInteraction.Touch
 	{
 		public void Load() 
 		{
-			Mvx.RegisterType<IUserInteraction, UserInteraction>();
+			Mvx.IoCProvider.RegisterType<IUserInteraction, UserInteraction>();
 		}
 	}
 }
