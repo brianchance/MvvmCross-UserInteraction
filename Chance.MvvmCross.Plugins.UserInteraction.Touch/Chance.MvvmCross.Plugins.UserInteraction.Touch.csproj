@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chance.MvvmCross.Plugins.UserInteraction.NetStandard\Chance.MvvmCross.Plugins.UserInteraction.NetStandard.csproj">
-      <Project>{5beb27b2-a3c9-43ec-bfff-c684c82ea435}</Project>
+      <Project>{776CCC82-A470-4ABB-9B1D-08D76CD82F25}</Project>
       <Name>Chance.MvvmCross.Plugins.UserInteraction.NetStandard</Name>
     </ProjectReference>
   </ItemGroup>
